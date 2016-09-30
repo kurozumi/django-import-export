@@ -3,7 +3,7 @@ from datetime import datetime
 
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls import patterns, url
 from django.template.response import TemplateResponse
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
@@ -26,7 +26,7 @@ class ImportMixin(object):
 
     def get_urls(self):
         urls = super(ImportMixin, self).get_urls()
-        info = self.model._meta.app_label, self.model._meta.module_name
+        info = self.model._meta.app_label, self.model._meta.model_name
         my_urls = patterns('',
             url(r'^import/$',
                 self.admin_site.admin_view(self.import_action),
