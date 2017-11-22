@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012–2016, Bojan Mihelac
+# This file is distributed under the same license as the
+# django-import-export package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-import-export 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-20 05:32-0600\n"
+"PO-Revision-Date: 2017-11-20 22:05+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#: ../../index.rst:3
+msgid "Django import / export"
+msgstr "Django インポート/エクスポート"
+
+#: ../../index.rst:5
+msgid ""
+"django-import-export is a Django application and library for importing "
+"and exporting data with included admin integration."
+msgstr ""
+"django-import-exportは、Djangoのアプリケーションとライブラリであり、admin"
+"と統合してデータのインポートとエクスポートが可能になります。"
+
+#: ../../index.rst:8
+msgid "**Features:**"
+msgstr "**特徴:**"
+
+#: ../../index.rst:10
+msgid ""
+"support multiple formats (Excel, CSV, JSON, ... and everything else that "
+"`tablib`_ supports)"
+msgstr ""
+"複数のフォーマット(Excel、CSV、JSONなど、 `tablib` がサポートするすべての"
+"フォーマット)をサポート"
+
+#: ../../index.rst:13
+msgid "admin integration for importing"
+msgstr "インポート用のadmin統合"
+
+#: ../../index.rst:15
+msgid "preview import changes"
+msgstr "インポートの変更プレビュー"
+
+#: ../../index.rst:17
+msgid "admin integration for exporting"
+msgstr "エクスポート用のadmin統合"
+
+#: ../../index.rst:19
+msgid "export data respecting admin filters"
+msgstr "adminフィルタを尊重するエクスポートデータ"
+
+#: ../../index.rst:23
+msgid "A screenshot of the change view with Import and Export buttons."
+msgstr ""
+"インポートとエクスポートを含む変更されたビューのスクリーンショット。"
+
+#: ../../index.rst:26
+msgid "User Guide"
+msgstr "ユーザーガイド"
+
+#: ../../index.rst:35
+msgid "API documentation"
+msgstr "APIドキュメント"

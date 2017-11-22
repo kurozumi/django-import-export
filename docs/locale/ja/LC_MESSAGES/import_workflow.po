@@ -1,0 +1,332 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012–2016, Bojan Mihelac
+# This file is distributed under the same license as the
+# django-import-export package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-import-export 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-20 05:32-0600\n"
+"PO-Revision-Date: 2017-11-23 00:58+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#: ../../import_workflow.rst:3
+msgid "Import data workflow"
+msgstr "インポートデータのワークフロー"
+
+#: ../../import_workflow.rst:5
+msgid ""
+"This document describes the import data workflow in detail, with hooks "
+"that enable customization of the import process. The central aspect of "
+"the import process is a resource's :meth:`~import_export.resources."
+"Resource.import_data` method which is explained below."
+msgstr ""
+"このドキュメントでは、インポートプロセスのカスタマイズを可能にするフック"
+"で、インポートデータのワークフローを詳しく説明します。インポートプロセス"
+"の中心的な側面は、下記の説明にあるリソースの :meth:`~import_export."
+"resources.Resource.import_data` メソッドです。"
+
+#: ../../import_workflow.rst:11
+msgid ""
+"The :meth:`~import_export.resources.Resource.import_data` method of :"
+"class:`~import_export.resources.Resource` is responsible for importing "
+"data from a given dataset."
+msgstr ""
+":class:`~import_export.resources.Resource` の :meth:`~import_export."
+"resources.Resource.import_data` メソッドは、指定されたデータセットから"
+"データをインポートすることを担当します。"
+
+#: ../../import_workflow.rst:15
+msgid ""
+"``dataset`` is required and expected to be a :class:`tablib.Dataset` "
+"with a header row."
+msgstr ""
+"``dataset`` は必須であり、ヘッダー行を持つ :class:`tablib.Dataset` である"
+"ことが必要です。"
+
+#: ../../import_workflow.rst:18
+msgid ""
+"``dry_run`` is a Boolean which determines if changes to the database are "
+"made or if the import is only simulated. It defaults to ``False``."
+msgstr ""
+"``dry_run`` はデータベースを変更するか、インポートをシュミレートするかど"
+"うかを判断するブール値です。デフォルトは ``False`` です。"
+
+#: ../../import_workflow.rst:21
+msgid ""
+"``raise_errors`` is a Boolean. If ``True``, import should raise errors. "
+"The default is ``False``, which means that eventual errors and traceback "
+"will be saved in ``Result`` instance."
+msgstr ""
+"``raise_errors`` はブール値です。 ``True`` の場合、エラーが発生します。デ"
+"フォルトは ``False`` です。これは最終的なエラーとトレースバックが "
+"``Result`` インスタンスに保存されることを意味します。"
+
+#: ../../import_workflow.rst:26
+msgid "This is what happens when the method is invoked:"
+msgstr "これはメソッドが呼び出されたときに起こることです:"
+
+#: ../../import_workflow.rst:28
+msgid ""
+"First, a new :class:`~import_export.results.Result` instance, which "
+"holds errors and other information gathered during the import, is "
+"initialized."
+msgstr ""
+"最初に、インポート中に収集されたエラーやその他の情報を保持する新しい :"
+"class:`~import_export.instance_loaders.InstanceLoader` インスタンが初期化"
+"されます。"
+
+#: ../../import_workflow.rst:31
+msgid ""
+"Then, an :class:`~import_export.instance_loaders.InstanceLoader` "
+"responsible for loading existing instances is intitalized. A different :"
+"class:`~import_export.instance_loaders.BaseInstanceLoader` can be "
+"specified via :class:`~import_export.resources.ResourceOptions`'s "
+"``instance_loader_class`` attribute. A :class:`~import_export."
+"instance_loaders.CachedInstanceLoader` can be used to reduce number of "
+"database queries. See the `source <https://github.com/django-import-"
+"export/django-import-export/blob/master/import_export/instance_loaders."
+"py>`_ for available implementations."
+msgstr ""
+"次に、既存のインスタンスのロードを担当する :class:`~import_export."
+"instance_loaders.InstanceLoader` が初期化されます。:class:"
+"`~import_export.resources.ResourceOptions` の ``instance_loader_class`` "
+"属性を使用して別の :class:~import_export.instance_loaders."
+"BaseInstanceLoader` を指定できます。:class:`~import_export."
+"instance_loaders.CachedInstanceLoader` を使用すると、データベースクエリの"
+"数を減らすことが出来ます。利用可能な実装については、 `source <https://"
+"github.com/django-import-export/django-import-export/blob/master/"
+"import_export/instance_loaders.py>`_  を参照して下さい。"
+
+#: ../../import_workflow.rst:38
+msgid ""
+"The :meth:`~import_export.resources.Resource.before_import` hook is "
+"called. By implementing this method in your resource, you can customize "
+"the import process."
+msgstr ""
+":meth:`~import_export.resources.Resource.before_import` フックが呼び出さ"
+"れます。このメソッドをリソースに実装することで、インポートプロセスをカス"
+"タマイズ出来ます。"
+
+#: ../../import_workflow.rst:41
+msgid ""
+"Each row of the to-be-imported dataset is processed according to the "
+"following steps:"
+msgstr ""
+"インポート大勝のデータセットの各行は、次の手順に従って処理されます:"
+
+#: ../../import_workflow.rst:43
+msgid ""
+"The :meth:`~import_export.resources.Resource.before_import_row` hook is "
+"called to allow for row data to be modified before it is imported"
+msgstr ""
+":meth:`~import_export.resources.Resource.before_import_row` フックはイン"
+"ポートする前に変更される行データを許可するために呼び出されます"
+
+#: ../../import_workflow.rst:45
+msgid ""
+":meth:`~import_export.resources.Resource.get_or_init_instance` is called "
+"with current :class:`~import_export.instance_loaders.BaseInstanceLoader` "
+"and current row of the dataset, returning an object and a Boolean "
+"declaring if the object is newly created or not."
+msgstr ""
+":meth:`~import_export.resources.Resource.get_or_init_instance`  は、現在"
+"の :class:`~import_export.instance_loaders.BaseInstanceLoader` とデータ"
+"セットの現在の行で呼び出され、オブジェクトが返され、オブフェクトが新しく"
+"作成されたかどうかのブール値が宣言されます。"
+
+#: ../../import_workflow.rst:50
+msgid ""
+"If no object can be found for the current row, :meth:`~import_export."
+"resources.Resource.init_instance` is invoked to initialize an object."
+msgstr ""
+"現在の行でオブジェクトが見つからない場合は、オブジェクトを初期化するため"
+"に :meth:`~import_export.resources.Resource.init_instance` が呼び出されま"
+"す。"
+
+#: ../../import_workflow.rst:54
+msgid ""
+"As always, you can override the implementation of :meth:`~import_export."
+"resources.Resource.init_instance` to customized how the new object is "
+"created (i.e. set default values)."
+msgstr ""
+"いつものように、:meth:`~import_export.resources.Resource.init_instance` "
+"実装を上書きして、新しいオブジェクトの作成方法をカスタマイズすることが出"
+"来ます(つまり、デフォルト値の設定)。"
+
+#: ../../import_workflow.rst:58
+msgid ""
+":meth:`~import_export.resources.Resource.for_delete` is called to "
+"determine if the passed ``instance`` should be deleted. In this case, "
+"the import process for the current row is stopped at this point."
+msgstr ""
+":meth:`~import_export.resources.Resource.for_delete` は渡された "
+"``instance`` を削除するかどうかを判断するために呼び出されます。この場合、"
+"現在の行のインポートプロセスはこの時点で停止します。"
+
+#: ../../import_workflow.rst:61
+msgid ""
+"If the instance was not deleted in the previous step, :meth:"
+"`~import_export.resources.Resource.import_obj` is called with the "
+"``instance`` as current object, ``row`` as current row and ``dry run``."
+msgstr ""
+"前の手順でインスタンスが削除されなかった場合、:meth:`~import_export."
+"resources.Resource.import_obj` は現在のオブジェクトとして ``instance`` "
+"を、現在の行として ``row`` を、そして ``dry run`` で呼ばれます。"
+
+#: ../../import_workflow.rst:65
+msgid ""
+":meth:`~import_export.resources.Resource.import_field` is called for "
+"each field in :class:`~import_export.resources.Resource` skipping many- "
+"to-many fields. Many-to-many fields are skipped because they require "
+"instances to have a primary key and therefore assignment is postponed to "
+"when the object has already been saved."
+msgstr ""
+":meth:`~import_export.resources.Resource.import_field` は、多対多のフィー"
+"ルドをスキップする :class:`~import_export.resources.Resource` の各フィー"
+"ルドに対して呼び出されます。多対多のフィールドはインスタンスに主キーを持"
+"たせる必要があるためスキップされます。そしてオブジェクトがすでに保存され"
+"ている時に代入が延期されます。"
+
+#: ../../import_workflow.rst:71
+msgid ""
+":meth:`~import_export.resources.Resource.import_field` in turn calls :"
+"meth:`~import_export.fields.Field.save`, if ``Field.attribute`` is set "
+"and ``Field.column_name`` exists in the given row."
+msgstr ""
+":meth:`~import_export.resources.Resource.import_field`は、``Field."
+"attribute`` が設定され、`Field.column_name`` が指定された行に存在する場"
+"合、:meth:`~import_export.fields.Field.save` を呼び出します。"
+
+#: ../../import_workflow.rst:75
+msgid ""
+"It then is determined whether the newly imported object is different "
+"from the already present object and if therefore the given row should be "
+"skipped or not. This is handled by calling :meth:`~import_export."
+"resources.Resource.skip_row` with ``original`` as the original object "
+"and ``instance`` as the current object from the dataset."
+msgstr ""
+"次いで、新たにインポートされたオブジェクトがすでに存在するオブジェクトと"
+"異なるか否か、したがって、与えられた行がスキップされるべきか否かが判定さ"
+"れる。これは、元のオブジェクトとして ``original`` を使用し、データセット"
+"から現行オブジェクトとして ``instance`` を :meth:`~import_export."
+"resources.Resource.skip_row` を呼び出すことによって処理されます。"
+
+#: ../../import_workflow.rst:81
+msgid ""
+"If the current row is to be skipped, ``row_result.import_type`` is set "
+"to ``IMPORT_TYPE_SKIP``."
+msgstr ""
+"現在の行をスキップする場合、``row_result.import_type`` は "
+"``IMPORT_TYPE_SKIP`` に設定されます。"
+
+#: ../../import_workflow.rst:84
+msgid ""
+"If the current row is not to be skipped, :meth:`~import_export.resources."
+"Resource.save_instance` is called and actually saves the instance when "
+"``dry_run`` is not set."
+msgstr ""
+"現在の行をスキップしない場合は、 :meth:`~import_export.resources."
+"Resource.save_instance` が呼び出され、 `dry_run``  が設定されていない場"
+"合、実際にインスタンスが保存されます。"
+
+#: ../../import_workflow.rst:88
+msgid ""
+"There are two hook methods (that by default do nothing) giving you the "
+"option to customize the import process:"
+msgstr ""
+"インポートプロセスをカスタマイズするオプションを提供する2つのフックメソッ"
+"ド（デフォルトでは何もしません）があります:"
+
+#: ../../import_workflow.rst:91
+msgid ":meth:`~import_export.resources.Resource.before_save_instance`"
+msgstr ""
+
+#: ../../import_workflow.rst:92
+msgid ":meth:`~import_export.resources.Resource.after_save_instance`"
+msgstr ""
+
+#: ../../import_workflow.rst:94
+msgid "Both methods receive ``instance`` and ``dry_run`` arguments."
+msgstr ""
+"どちらのメソッドも、``instance`` 引数と ``dry_run`` 引数を受け取ります。"
+
+#: ../../import_workflow.rst:96
+msgid ""
+":meth:`~import_export.resources.Resource.save_m2m` is called to save "
+"many to many fields."
+msgstr ""
+":meth:`~import_export.resources.Resource.save_m2m` は、多くのフィールドを"
+"保存するために呼び出されます。"
+
+#: ../../import_workflow.rst:99
+msgid ""
+":class:`~import_export.results.RowResult` is assigned with a diff "
+"between the original and the imported object fields, as well as and "
+"``import_type`` attribute which states whether the row is new, updated, "
+"skipped or deleted."
+msgstr ""
+":class:`~import_export.results.RowResult` には、元のフィールドとインポー"
+"トされたオブジェクトフィールドの間のdiff、および行が新規か更新済みかス"
+"キップされたか削除されたかを示す ``import_type`` 属性が割り当てられます。"
+
+#: ../../import_workflow.rst:104
+msgid ""
+"If an exception is raised during row processing and :meth:"
+"`~import_export.resources.Resource.import_data` was invoked with "
+"``raise_errors=False`` (which is the default) the particular traceback "
+"is appended to :class:`~import_export.results.RowResult` as well."
+msgstr ""
+"行の処理中に例外が発生し、``raise_errors=False`` (デフォルト)の :meth:"
+"`~import_export.resources.Resource.import_data` が呼び出された場合、特定"
+"のトレースバックが :class:`~import_export.results.RowResult` にも追加され"
+"ます。"
+
+#: ../../import_workflow.rst:109
+msgid ""
+"If either the row was not skipped or the :class:`~import_export."
+"resources.Resource` is configured to report skipped rows, the :class:"
+"`~import_export.results.RowResult` is appended to the :class:"
+"`~import_export.results.Result`"
+msgstr ""
+"行がスキップされなかった場合、またはスキップされた行をレポートするよう"
+"に :class:`~import_export.resources.Resource` が構成されている場合は、:"
+"class:`~import_export.results.RowResult` が :class:`~import_export."
+"results.Result` 追加されます"
+
+#: ../../import_workflow.rst:113
+msgid ""
+"The :meth:`~import_export.resources.Resource.after_import_row` hook is "
+"called"
+msgstr ""
+":meth:`~import_export.resources.Resource.after_import_row` フックは呼び出"
+"されます"
+
+#: ../../import_workflow.rst:115
+msgid "The :class:`~import_export.results.Result` is returned."
+msgstr ":class:`~import_export.results.Result` が返されます。"
+
+#: ../../import_workflow.rst:118
+msgid "Transaction support"
+msgstr "トランザクションサポート"
+
+#: ../../import_workflow.rst:120
+msgid ""
+"If transaction support is enabled, whole import process is wrapped "
+"inside transaction and rollbacked or committed respectively. All methods "
+"called from inside of ``import_data`` (create / delete / update) receive "
+"``False`` for ``dry_run`` argument."
+msgstr ""
+"トランザクションサポートが有効な場合、インポートプロセス全体がトランザク"
+"ション内でラップされ、ロールバックまたはコミットされます。 "
+"``import_data`` (create / delete / update)の内部から呼び出されたすべての"
+"メソッドは、``dry_run`` 引数に対して ``False`` を受け取ります。"

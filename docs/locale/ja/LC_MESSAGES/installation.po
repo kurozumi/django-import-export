@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012–2016, Bojan Mihelac
+# This file is distributed under the same license as the
+# django-import-export package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-import-export 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-20 05:32-0600\n"
+"PO-Revision-Date: 2017-11-20 22:28+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#: ../../installation.rst:3
+msgid "Installation and configuration"
+msgstr "インストールと設定"
+
+#: ../../installation.rst:5
+msgid ""
+"django-import-export is available on the Python Package Index (PyPI), so "
+"it can be installed with standard Python tools like ``pip`` or "
+"``easy_install``::"
+msgstr ""
+"djnago-mport-exportはPythonパッケージインデックス(PyPI)で利用可能です。で"
+"すので、 ``pip`` や ``easy_install`` のような標準のPythonツールでインス"
+"トールできます::"
+
+#: ../../installation.rst:10
+msgid ""
+"Alternatively, you can install the git repository directly to obtain the "
+"development version::"
+msgstr ""
+"あるいは、開発版を入手するためためにgitリポジトリを直セスインストールする"
+"ことが出来ます:"
+
+#: ../../installation.rst:15
+msgid ""
+"Now, you're good to go, unless you want to use django-import-export from "
+"the admin as well. In this case, you need to add it to your "
+"``INSTALLED_APPS`` and let Django collect its static files."
+msgstr ""
+"Now, you’re good to go, unless you want to use django-import-export from "
+"the admin as well.この場合、 ``INSTALLED_APPS`` に追加して、静的ファイル"
+"を収集させる必要があります。"
+
+#: ../../installation.rst:31
+msgid ""
+"All prequisites are set up! See :doc:`getting_started` to learn how to "
+"use django-import-export in your project."
+msgstr ""
+"すべての前提がセットアップされます！あなたのプロジェクトでdjango-import-"
+"exportを使用する方法を学習するために :doc:`getting_started` を参照して下"
+"さい。"
+
+#: ../../installation.rst:36
+msgid "Settings"
+msgstr "設定"
+
+#: ../../installation.rst:38
+msgid "You can use the following directives in your settings file:"
+msgstr "設定ファイルで次の命令を使うことが出来ます:"
+
+#: ../../installation.rst:42
+msgid "``IMPORT_EXPORT_USE_TRANSACTIONS``"
+msgstr ""
+
+#: ../../installation.rst:41
+msgid ""
+"Global setting controls if resource importing should use database "
+"transactions. Default is ``False``."
+msgstr ""
+"リソースのインポートでデータベーストランザクションを使用するかどうかはグ"
+"ローバル設定で制御できます。デフォルトは ``False`` です。"
+
+#: ../../installation.rst:50
+msgid "``IMPORT_EXPORT_SKIP_ADMIN_LOG``"
+msgstr ""
+
+#: ../../installation.rst:45
+msgid ""
+"Global setting controls if creating log entries for the admin changelist "
+"should be skipped when importing resource. The `skip_admin_log` "
+"attribute of `ImportMixin` is checked first, which defaults to ``None``. "
+"If not found, this global option is used. This will speed up importing "
+"large datasets, but will lose changing logs in the admin changelist "
+"view.  Default is ``False``."
+msgstr ""
+"グローバル設定では、リソースをインポートするときにadmin変更リストのログエ"
+"ントリの作成をスキップするかどうかを制御できます。まず、 `ImportMixin` "
+"の `skip_admin_log` 属性をチェックします。デフォルトでは `` None`` に設定"
+"されています。見つからなければ、このグローバルオプションが使用されます。"
+"これは大きなデータセットのインポートが高速化されますが、adminの変更リスト"
+"ビューでの変更ログは失われます。デフォルトは ``False`` です。"
+
+#: ../../installation.rst:59
+msgid "``IMPORT_EXPORT_TMP_STORAGE_CLASS``"
+msgstr ""
+
+#: ../../installation.rst:53
+msgid ""
+"Global setting for the class to use to handle temporary storage of the "
+"uploaded file when importing from the admin using an `ImportMixin`.  The "
+"`tmp_storage_class` attribute of `ImportMixin` is checked first, which "
+"defaults to ``None``. If not found, this global option is used. Default "
+"is ``TempFolderStorage``."
+msgstr ""
+"`ImportMixin` を使ってadminからインポートする時アップロードされたファイル"
+"の一時ストレージを処理するために使用するクラスのグローバル設定。まず、 "
+"`ImportMixin` の `tmp_storage_class` 属性がチェックされます。デフォルト"
+"は ``None`` です。もし見つからなければ、このグローバルオプションが使われ"
+"ます。デフォルトは ``TempFolderStorage`` です。"
+
+#: ../../installation.rst:62
+msgid "Example app"
+msgstr "サンプルアプリケーション"
+
+#: ../../installation.rst:64
+msgid ""
+"There's an example application that showcases what django-import-export "
+"can do. You can run it via::"
+msgstr ""
+"django-import-exportができることを紹介するサンプルアプリケーションがあり"
+"ます。あなたは以下のようにして実行できます::"
+
+#: ../../installation.rst:69
+msgid "Username and password for admin are ``admin`` and ``password``."
+msgstr "adminのユーザー名とパスワードは ``admin`` と ``password`` です。"

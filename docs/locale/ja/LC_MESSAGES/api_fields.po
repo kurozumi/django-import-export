@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012–2016, Bojan Mihelac
+# This file is distributed under the same license as the
+# django-import-export package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: django-import-export 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-20 05:32-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../api_fields.rst:3
+msgid "Fields"
+msgstr ""
+
+#: import_export.fields.Field:1 of
+msgid ""
+"Field represent mapping between `object` field and representation of this"
+" field."
+msgstr ""
+
+#: import_export.fields.Field of
+msgid "Parameters"
+msgstr ""
+
+#: import_export.fields.Field:4 of
+msgid "A string of either an instance attribute or callable off the object."
+msgstr ""
+
+#: import_export.fields.Field:7 of
+msgid ""
+"Lets you provide a name for the column that represents this field in the "
+"export."
+msgstr ""
+
+#: import_export.fields.Field:10 of
+msgid ""
+"Defines a widget that will be used to represent this field's data in the "
+"export."
+msgstr ""
+
+#: import_export.fields.Field:13 of
+msgid "A Boolean which defines if this field will be ignored during import."
+msgstr ""
+
+#: import_export.fields.Field:16 of
+msgid ""
+"This value will be returned by :meth:`~import_export.fields.Field.clean` "
+"if this field's widget did not return an adequate value."
+msgstr ""
+
+#: import_export.fields.Field.clean:1 of
+msgid ""
+"Translates the value stored in the imported datasource to an appropriate "
+"Python object and returns it."
+msgstr ""
+
+#: import_export.fields.Field.export:1 of
+msgid "Returns value from the provided object converted to export representation."
+msgstr ""
+
+#: import_export.fields.Field.get_value:1 of
+msgid "Returns the value of the object's attribute."
+msgstr ""
+
+#: import_export.fields.Field.save:1 of
+msgid ""
+"If this field is not declared readonly, the object's attribute will be "
+"set to the value returned by :meth:`~import_export.fields.Field.clean`."
+msgstr ""
+

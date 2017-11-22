@@ -1,0 +1,296 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012–2016, Bojan Mihelac
+# This file is distributed under the same license as the
+# django-import-export package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-import-export 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-20 05:32-0600\n"
+"PO-Revision-Date: 2017-11-23 02:22+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#: ../../api_resources.rst:3
+msgid "Resources"
+msgstr ""
+
+#: ../../api_resources.rst:6
+msgid "Resource"
+msgstr ""
+
+#: import_export.resources.Resource:1 of
+msgid ""
+"Resource defines how objects are mapped to their import and export "
+"representations and handle importing and exporting data."
+msgstr ""
+"リソースは、オブジェクトがインポートおよびエクスポート表現にどのようにマップさ"
+"れ、データのインポートおよびエクスポートを処理するかを定義します。"
+
+#: import_export.resources.Resource.after_delete_instance:1
+#: import_export.resources.Resource.after_export:1
+#: import_export.resources.Resource.after_import:1
+#: import_export.resources.Resource.after_import_instance:1
+#: import_export.resources.Resource.after_import_row:1
+#: import_export.resources.Resource.after_save_instance:1
+#: import_export.resources.Resource.before_delete_instance:1
+#: import_export.resources.Resource.before_export:1
+#: import_export.resources.Resource.before_import:1
+#: import_export.resources.Resource.before_import_row:1
+#: import_export.resources.Resource.before_save_instance:1 of
+msgid "Override to add additional logic. Does nothing by default."
+msgstr "オーバーライドしてロジックを追加します。デフォルトでは何もしません。"
+
+#: import_export.resources.Resource.delete_instance:1 of
+msgid "Calls :meth:`instance.delete` as long as ``dry_run`` is not set."
+msgstr ""
+"``dry_run`` が設定されていない限り、:meth:`instance.delete` を呼び出します。"
+
+#: import_export.resources.Resource.export:1 of
+msgid "Exports a resource."
+msgstr ""
+
+#: import_export.resources.Resource.for_delete:1 of
+msgid "Returns ``True`` if ``row`` importing should delete instance."
+msgstr ""
+
+#: import_export.resources.Resource.for_delete:3 of
+msgid ""
+"Default implementation returns ``False``. Override this method to handle "
+"deletion."
+msgstr ""
+
+#: import_export.resources.Resource.get_diff_headers:1 of
+msgid "Diff representation headers."
+msgstr ""
+
+#: import_export.resources.Resource.get_error_result_class:1 of
+msgid "Returns the class used to store an error resulting from an import."
+msgstr ""
+
+#: import_export.resources.Resource.get_field_name:1 of
+msgid "Returns the field name for a given field."
+msgstr ""
+
+#: import_export.resources.Resource.get_fields:1 of
+msgid ""
+"Returns fields sorted according to :attr:`~import_export.resources."
+"ResourceOptions.export_order`."
+msgstr ""
+
+#: import_export.resources.Resource.get_instance:1 of
+msgid "Calls the :doc:`InstanceLoader <api_instance_loaders>`."
+msgstr ""
+
+#: import_export.resources.Resource.get_or_init_instance:1 of
+msgid "Either fetches an already existing instance or initializes a new one."
+msgstr ""
+
+#: import_export.resources.Resource.get_result_class:1 of
+msgid "Returns the class used to store the result of an import."
+msgstr ""
+
+#: import_export.resources.Resource.get_row_result_class:1 of
+msgid "Returns the class used to store the result of a row import."
+msgstr ""
+
+#: import_export.resources.Resource.import_data:1
+#: import_export.resources.Resource.import_row:1 of
+msgid ""
+"Imports data from ``tablib.Dataset``. Refer to :doc:`import_workflow` for a "
+"more complete description of the whole import process."
+msgstr ""
+
+#: import_export.resources.Resource.import_data
+#: import_export.resources.Resource.import_row of
+msgid "Parameters"
+msgstr ""
+
+#: import_export.resources.Resource.import_data:4 of
+msgid "A ``tablib.Dataset``"
+msgstr ""
+
+#: import_export.resources.Resource.import_data:6 of
+msgid "Whether errors should be printed to the end user or raised regularly."
+msgstr ""
+
+#: import_export.resources.Resource.import_data:9 of
+msgid "If ``True`` the import process will be processed inside a transaction."
+msgstr ""
+
+#: import_export.resources.Resource.import_data:12 of
+msgid "If ``True`` the import process will collect failed rows."
+msgstr ""
+
+#: import_export.resources.Resource.import_data:15 of
+msgid ""
+"If ``dry_run`` is set, or an error occurs, if a transaction is being used, it "
+"will be rolled back."
+msgstr ""
+
+#: import_export.resources.Resource.import_field:1 of
+msgid ""
+"Calls :meth:`import_export.fields.Field.save` if ``Field.attribute`` and "
+"``Field.column_name`` are found in ``data``."
+msgstr ""
+
+#: import_export.resources.Resource.import_obj:1 of
+msgid ""
+"Traverses every field in this Resource and calls :meth:`~import_export."
+"resources.Resource.import_field`."
+msgstr ""
+
+#: import_export.resources.Resource.import_row:4 of
+msgid "A ``dict`` of the row to import"
+msgstr ""
+
+#: import_export.resources.Resource.import_row:6 of
+msgid "The instance loader to be used to load the row"
+msgstr ""
+
+#: import_export.resources.Resource.import_row:8 of
+msgid ""
+"If ``using_transactions`` is set, a transaction is being used to wrap the "
+"import"
+msgstr ""
+
+#: import_export.resources.Resource.import_row:11 of
+msgid "If ``dry_run`` is set, or error occurs, transaction will be rolled back."
+msgstr ""
+
+#: import_export.resources.Resource.save_instance:1 of
+msgid "Takes care of saving the object to the database."
+msgstr ""
+
+#: import_export.resources.Resource.save_instance:3 of
+msgid ""
+"Keep in mind that this is done by calling ``instance.save()``, so objects are "
+"not created in bulk!"
+msgstr ""
+
+#: import_export.resources.Resource.save_m2m:1 of
+msgid "Saves m2m fields."
+msgstr ""
+
+#: import_export.resources.Resource.save_m2m:3 of
+msgid ""
+"Model instance need to have a primary key value before a many-to-many "
+"relationship can be used."
+msgstr ""
+
+#: import_export.resources.Resource.skip_row:1 of
+msgid "Returns ``True`` if ``row`` importing should be skipped."
+msgstr ""
+
+#: import_export.resources.Resource.skip_row:3 of
+msgid ""
+"Default implementation returns ``False`` unless skip_unchanged == True. "
+"Override this method to handle skipping rows meeting certain conditions."
+msgstr ""
+
+#: ../../api_resources.rst:12
+msgid "ModelResource"
+msgstr ""
+
+#: import_export.resources.ModelResource:1 of
+msgid "ModelResource is Resource subclass for handling Django models."
+msgstr ""
+
+#: import_export.resources.ModelResource.after_import:1 of
+msgid "Reset the SQL sequences after new objects are imported"
+msgstr ""
+
+#: import_export.resources.ModelResource.field_from_django_field:1 of
+msgid "Returns a Resource Field instance for the given Django model field."
+msgstr ""
+
+#: import_export.resources.ModelResource.get_queryset:1 of
+msgid ""
+"Returns a queryset of all objects for this model. Override this if you want to "
+"limit the returned queryset."
+msgstr ""
+
+#: import_export.resources.ModelResource.init_instance:1 of
+msgid "Initializes a new Django model."
+msgstr ""
+
+#: import_export.resources.ModelResource.widget_from_django_field:1 of
+msgid "Returns the widget that would likely be associated with each Django type."
+msgstr ""
+
+#: import_export.resources.ModelResource.widget_kwargs_for_field:1 of
+msgid "Returns widget kwargs for given field_name."
+msgstr ""
+
+#: ../../api_resources.rst:19
+msgid "ResourceOptions (Meta)"
+msgstr ""
+
+#: import_export.resources.ResourceOptions:1 of
+msgid ""
+"The inner Meta class allows for class-level configuration of how the Resource "
+"should behave. The following options are available:"
+msgstr ""
+
+#: import_export.resources.ResourceOptions.exclude:1 of
+msgid ""
+"Controls what introspected fields the Resource should NOT include. A blacklist "
+"of fields."
+msgstr ""
+
+#: import_export.resources.ResourceOptions.export_order:1 of
+msgid "Controls export order for columns."
+msgstr ""
+
+#: import_export.resources.ResourceOptions.fields:1 of
+msgid ""
+"Controls what introspected fields the Resource should include. A whitelist of "
+"fields."
+msgstr ""
+
+#: import_export.resources.ResourceOptions.import_id_fields:1 of
+msgid "Controls which object fields will be used to identify existing instances."
+msgstr ""
+
+#: import_export.resources.ResourceOptions.instance_loader_class:1 of
+msgid "Controls which class instance will take care of loading existing objects."
+msgstr ""
+
+#: import_export.resources.ResourceOptions.model:1 of
+msgid "Django Model class. It is used to introspect available fields."
+msgstr ""
+
+#: import_export.resources.ResourceOptions.report_skipped:1 of
+msgid "Controls if the result reports skipped rows Default value is True"
+msgstr ""
+
+#: import_export.resources.ResourceOptions.skip_unchanged:1 of
+msgid ""
+"Controls if the import should skip unchanged records. Default value is False"
+msgstr ""
+
+#: import_export.resources.ResourceOptions.use_transactions:1 of
+msgid ""
+"Controls if import should use database transactions. Default value is ``None`` "
+"meaning ``settings.IMPORT_EXPORT_USE_TRANSACTIONS`` will be evaluated."
+msgstr ""
+
+#: import_export.resources.ResourceOptions.widgets:1 of
+msgid "This dictionary defines widget kwargs for fields."
+msgstr ""
+
+#: ../../api_resources.rst:25
+msgid "modelresource_factory"
+msgstr ""
+
+#: import_export.resources.modelresource_factory:1 of
+msgid "Factory for creating ``ModelResource`` class for given Django model."
+msgstr ""

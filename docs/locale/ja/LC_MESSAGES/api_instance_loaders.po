@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012–2016, Bojan Mihelac
+# This file is distributed under the same license as the
+# django-import-export package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: django-import-export 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-20 05:32-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../api_instance_loaders.rst:3
+msgid "Instance loaders"
+msgstr ""
+
+#: import_export.instance_loaders.BaseInstanceLoader:1 of
+msgid "Base abstract implementation of instance loader."
+msgstr ""
+
+#: import_export.instance_loaders.ModelInstanceLoader:1 of
+msgid "Instance loader for Django model."
+msgstr ""
+
+#: import_export.instance_loaders.ModelInstanceLoader:3 of
+msgid "Lookup for model instance by ``import_id_fields``."
+msgstr ""
+
+#: import_export.instance_loaders.CachedInstanceLoader:1 of
+msgid ""
+"Loads all possible model instances in dataset avoid hitting database for "
+"every ``get_instance`` call."
+msgstr ""
+
+#: import_export.instance_loaders.CachedInstanceLoader:4 of
+msgid ""
+"This instance loader work only when there is one ``import_id_fields`` "
+"field."
+msgstr ""
+

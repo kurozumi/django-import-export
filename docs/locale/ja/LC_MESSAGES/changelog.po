@@ -1,0 +1,528 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012–2016, Bojan Mihelac
+# This file is distributed under the same license as the
+# django-import-export package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: django-import-export 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-20 05:32-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../changelog.rst:2
+msgid "Changelog"
+msgstr ""
+
+#: ../../changelog.rst:6
+msgid "0.5.2 (unreleased)"
+msgstr ""
+
+#: ../../changelog.rst:8
+msgid "Nothing changed yet."
+msgstr ""
+
+#: ../../changelog.rst:12
+msgid "0.5.1 (2016-09-29)"
+msgstr ""
+
+#: ../../changelog.rst:14
+msgid "French locale not in pypi (#524)"
+msgstr ""
+
+#: ../../changelog.rst:16
+msgid "Bugfix/fix undefined template variables (#519)"
+msgstr ""
+
+#: ../../changelog.rst:20
+msgid "0.5.0 (2016-09-01)"
+msgstr ""
+
+#: ../../changelog.rst:22
+msgid "Hide default value in diff when importing a new instance (#458)"
+msgstr ""
+
+#: ../../changelog.rst:24
+msgid "Append rows to Result object via function call to allow overriding (#462)"
+msgstr ""
+
+#: ../../changelog.rst:26
+msgid "Add get_resource_kwargs to allow passing request to resource (#457)"
+msgstr ""
+
+#: ../../changelog.rst:28
+msgid "Expose Django user to get_export_data() and export() (#447)"
+msgstr ""
+
+#: ../../changelog.rst:30
+msgid "Add before_export and after_export hooks (#449)"
+msgstr ""
+
+#: ../../changelog.rst:32
+msgid "fire events post_import, post_export events (#440)"
+msgstr ""
+
+#: ../../changelog.rst:34
+msgid "add **kwargs to export_data / create_dataset"
+msgstr ""
+
+#: ../../changelog.rst:36
+msgid "Add before_import_row() and after_import_row() (#452)"
+msgstr ""
+
+#: ../../changelog.rst:38
+msgid ""
+"Add get_export_fields() to Resource to control what fields are exported "
+"(#461)"
+msgstr ""
+
+#: ../../changelog.rst:40
+msgid "Control user-visible fields (#466)"
+msgstr ""
+
+#: ../../changelog.rst:42
+msgid "Fix diff for models using ManyRelatedManager"
+msgstr ""
+
+#: ../../changelog.rst:44
+msgid "Handle already cleaned objects (#484)"
+msgstr ""
+
+#: ../../changelog.rst:46
+msgid "Add after_import_instance hook (#489)"
+msgstr ""
+
+#: ../../changelog.rst:48
+msgid "Use optimized xlsx reader (#482)"
+msgstr ""
+
+#: ../../changelog.rst:50
+msgid "Adds resource_class of BookResource (re-adds) in admin docs (#481)"
+msgstr ""
+
+#: ../../changelog.rst:52
+msgid "Require POST method for process_import() (#478)"
+msgstr ""
+
+#: ../../changelog.rst:54
+msgid ""
+"Add SimpleArrayWidget to support use of "
+"django.contrib.postgres.fields.ArrayField (#472)"
+msgstr ""
+
+#: ../../changelog.rst:56
+msgid "Add new Diff class (#477)"
+msgstr ""
+
+#: ../../changelog.rst:58
+msgid "Fix #375: add row to widget.clean(), obj to widget.render() (#479)"
+msgstr ""
+
+#: ../../changelog.rst:60
+msgid "Restore transactions for data import (#480)"
+msgstr ""
+
+#: ../../changelog.rst:62
+msgid "Refactor the import-export templates (#496)"
+msgstr ""
+
+#: ../../changelog.rst:64
+msgid "Update doc links to the stable version, update rtfd to .io (#507)"
+msgstr ""
+
+#: ../../changelog.rst:66
+msgid "Fixed typo in the Czech translation (#495)"
+msgstr ""
+
+#: ../../changelog.rst:70
+msgid "0.4.5 (2016-04-06)"
+msgstr ""
+
+#: ../../changelog.rst:72
+msgid "Add FloatWidget, use with model fields models.FloatField (#433)"
+msgstr ""
+
+#: ../../changelog.rst:74
+msgid "Fix default values in fields (#431, #364)"
+msgstr ""
+
+#: ../../changelog.rst:76
+msgid ""
+"Field constructor `default` argument is NOT_PROVIDED instead of None "
+"Field clean method checks value against `Field.empty_values` [None, '']"
+msgstr ""
+
+#: ../../changelog.rst:80
+msgid "0.4.4 (2016-03-22)"
+msgstr ""
+
+#: ../../changelog.rst:82
+msgid "FIX: No static/ when installed via pip #427"
+msgstr ""
+
+#: ../../changelog.rst:84
+msgid "Add total # of imports and total # of updates to import success msg"
+msgstr ""
+
+#: ../../changelog.rst:88
+msgid "0.4.3 (2016-03-08)"
+msgstr ""
+
+#: ../../changelog.rst:90
+msgid "fix MediaStorage does not respect the read_mode parameter (#416)"
+msgstr ""
+
+#: ../../changelog.rst:92
+msgid "Reset SQL sequences when new objects are imported (#59)"
+msgstr ""
+
+#: ../../changelog.rst:94
+msgid "Let Resource rollback if import throws exception (#377)"
+msgstr ""
+
+#: ../../changelog.rst:96
+msgid "Fixes error when a single value is stored in m2m relation field (#177)"
+msgstr ""
+
+#: ../../changelog.rst:98
+msgid "Add support for django.db.models.TimeField (#381)"
+msgstr ""
+
+#: ../../changelog.rst:102
+msgid "0.4.2 (2015-12-18)"
+msgstr ""
+
+#: ../../changelog.rst:104
+msgid "add xlsx import support"
+msgstr ""
+
+#: ../../changelog.rst:108
+msgid "0.4.1 (2015-12-11)"
+msgstr ""
+
+#: ../../changelog.rst:110
+msgid "fix for fields with a dyanmic default callable (#360)"
+msgstr ""
+
+#: ../../changelog.rst:114
+msgid "0.4.0 (2015-12-02)"
+msgstr ""
+
+#: ../../changelog.rst:116
+msgid "Add Django 1.9 support"
+msgstr ""
+
+#: ../../changelog.rst:118
+msgid "Django 1.4 is not supported (#348)"
+msgstr ""
+
+#: ../../changelog.rst:122
+msgid "0.3.1 (2015-11-20)"
+msgstr ""
+
+#: ../../changelog.rst:124
+msgid "FIX: importing csv in python 3"
+msgstr ""
+
+#: ../../changelog.rst:128
+msgid "0.3 (2015-11-20)"
+msgstr ""
+
+#: ../../changelog.rst:130
+msgid "FIX: importing csv UnicodeEncodeError introduced in 0.2.9 (#347)"
+msgstr ""
+
+#: ../../changelog.rst:134
+msgid "0.2.9 (2015-11-12)"
+msgstr ""
+
+#: ../../changelog.rst:136
+msgid "Allow Field.save() relation following (#344)"
+msgstr ""
+
+#: ../../changelog.rst:138
+msgid "Support default values on fields (and models) (#345)"
+msgstr ""
+
+#: ../../changelog.rst:140
+msgid "m2m widget: allow trailing comma (#343)"
+msgstr ""
+
+#: ../../changelog.rst:142
+msgid "Open csv files as text and not binary (#127)"
+msgstr ""
+
+#: ../../changelog.rst:146
+msgid "0.2.8 (2015-07-29)"
+msgstr ""
+
+#: ../../changelog.rst:148
+msgid "use the IntegerWidget for database-fields of type BigIntegerField (#302)"
+msgstr ""
+
+#: ../../changelog.rst:150
+msgid "make datetime timezone aware if USE_TZ is True (#283)."
+msgstr ""
+
+#: ../../changelog.rst:152
+msgid "Fix 0 is interpreted as None in number widgets (#274)"
+msgstr ""
+
+#: ../../changelog.rst:154
+msgid "add possibility to override tmp storage class (#133, #251)"
+msgstr ""
+
+#: ../../changelog.rst:156
+msgid "better error reporting (#259)"
+msgstr ""
+
+#: ../../changelog.rst:160
+msgid "0.2.7 (2015-05-04)"
+msgstr ""
+
+#: ../../changelog.rst:162
+msgid "Django 1.8 compatibility"
+msgstr ""
+
+#: ../../changelog.rst:164
+msgid "add attribute inheritance to Resource (#140)"
+msgstr ""
+
+#: ../../changelog.rst:166
+msgid "make the filename and user available to import_data (#237)"
+msgstr ""
+
+#: ../../changelog.rst:168
+msgid "Add to_encoding functionality (#244)"
+msgstr ""
+
+#: ../../changelog.rst:170
+msgid "Call before_import before creating the instance_loader - fixes #193"
+msgstr ""
+
+#: ../../changelog.rst:174
+msgid "0.2.6 (2014-10-09)"
+msgstr ""
+
+#: ../../changelog.rst:176
+msgid "added use of get_diff_headers method into import.html template (#158)"
+msgstr ""
+
+#: ../../changelog.rst:178
+msgid ""
+"Try to use OrderedDict instead of SortedDict, which is deprecated in "
+"Django 1.7 (#157)"
+msgstr ""
+
+#: ../../changelog.rst:181
+msgid "fixed #105 unicode import"
+msgstr ""
+
+#: ../../changelog.rst:183
+msgid "remove invalid form action \"form_url\" #154"
+msgstr ""
+
+#: ../../changelog.rst:187
+msgid "0.2.5 (2014-10-04)"
+msgstr ""
+
+#: ../../changelog.rst:189
+msgid "Do not convert numeric types to string (#149)"
+msgstr ""
+
+#: ../../changelog.rst:191
+msgid "implement export as an admin action (#124)"
+msgstr ""
+
+#: ../../changelog.rst:195
+msgid "0.2.4 (2014-09-18)"
+msgstr ""
+
+#: ../../changelog.rst:197
+msgid "fix: get_value raised attribute error on model method call"
+msgstr ""
+
+#: ../../changelog.rst:199
+msgid "Fixed XLS import on python 3. Optimized loop"
+msgstr ""
+
+#: ../../changelog.rst:201
+msgid ""
+"Fixed properly skipping row marked as skipped when importing data from "
+"the admin interface."
+msgstr ""
+
+#: ../../changelog.rst:204
+msgid "Allow Resource.export to accept iterables as well as querysets"
+msgstr ""
+
+#: ../../changelog.rst:206
+msgid "Improve error messages"
+msgstr ""
+
+#: ../../changelog.rst:208
+msgid ""
+"FIX: Properly handle NullBoleanField (#115) - Backward Incompatible "
+"Change previously None values were handled as false"
+msgstr ""
+
+#: ../../changelog.rst:213
+msgid "0.2.3 (2014-07-01)"
+msgstr ""
+
+#: ../../changelog.rst:215
+msgid "Add separator and field keyword arguments to ManyToManyWidget"
+msgstr ""
+
+#: ../../changelog.rst:217
+msgid "FIX: No support for dates before 1900 (#93)"
+msgstr ""
+
+#: ../../changelog.rst:221
+msgid "0.2.2 (2014-04-18)"
+msgstr ""
+
+#: ../../changelog.rst:223
+msgid "RowResult now stores exception object rather than it's repr"
+msgstr ""
+
+#: ../../changelog.rst:225
+msgid ""
+"Admin integration - add EntryLog object for each added/updated/deleted "
+"instance"
+msgstr ""
+
+#: ../../changelog.rst:229
+msgid "0.2.1 (2014-02-20)"
+msgstr ""
+
+#: ../../changelog.rst:231
+msgid "FIX import_file_name form field can be use to access the filesystem (#65)"
+msgstr ""
+
+#: ../../changelog.rst:235
+msgid "0.2.0 (2014-01-30)"
+msgstr ""
+
+#: ../../changelog.rst:237
+msgid "Python 3 support"
+msgstr ""
+
+#: ../../changelog.rst:241
+msgid "0.1.6 (2014-01-21)"
+msgstr ""
+
+#: ../../changelog.rst:243
+msgid "Additional hooks for customizing the workflow (#61)"
+msgstr ""
+
+#: ../../changelog.rst:246
+msgid "0.1.5 (2013-11-29)"
+msgstr ""
+
+#: ../../changelog.rst:248
+msgid "Prevent queryset caching when exporting (#44)"
+msgstr ""
+
+#: ../../changelog.rst:250
+msgid "Allow unchanged rows to be skipped when importing (#30)"
+msgstr ""
+
+#: ../../changelog.rst:252
+msgid "Update tests for Django 1.6 (#57)"
+msgstr ""
+
+#: ../../changelog.rst:254
+msgid ""
+"Allow different ``ResourceClass`` to be used in "
+"``ImportExportModelAdmin`` (#49)"
+msgstr ""
+
+#: ../../changelog.rst:258
+msgid "0.1.4"
+msgstr ""
+
+#: ../../changelog.rst:260
+msgid "Use `field_name` instead of `column_name` for field dehydration, FIX #36"
+msgstr ""
+
+#: ../../changelog.rst:262
+msgid ""
+"Handle OneToOneField,  FIX #17 - Exception when attempting access "
+"something on the related_name."
+msgstr ""
+
+#: ../../changelog.rst:265
+msgid "FIX #23 - export filter not working"
+msgstr ""
+
+#: ../../changelog.rst:268
+msgid "0.1.3"
+msgstr ""
+
+#: ../../changelog.rst:270
+msgid "Fix packaging"
+msgstr ""
+
+#: ../../changelog.rst:272
+msgid "DB transactions support for importing data"
+msgstr ""
+
+#: ../../changelog.rst:275
+msgid "0.1.2"
+msgstr ""
+
+#: ../../changelog.rst:277
+msgid "support for deleting objects during import"
+msgstr ""
+
+#: ../../changelog.rst:279
+msgid "bug fixes"
+msgstr ""
+
+#: ../../changelog.rst:281
+msgid "Allowing a field to be 'dehydrated' with a custom method"
+msgstr ""
+
+#: ../../changelog.rst:283
+msgid "added documentation"
+msgstr ""
+
+#: ../../changelog.rst:286
+msgid "0.1.1"
+msgstr ""
+
+#: ../../changelog.rst:288
+msgid "added ExportForm to admin integration for choosing export file format"
+msgstr ""
+
+#: ../../changelog.rst:290
+msgid ""
+"refactor admin integration to allow better handling of specific formats "
+"supported features and better handling of reading text files"
+msgstr ""
+
+#: ../../changelog.rst:293
+msgid "include all avialable formats in Admin integration"
+msgstr ""
+
+#: ../../changelog.rst:295
+msgid "bugfixes"
+msgstr ""
+
+#: ../../changelog.rst:298
+msgid "0.1.0"
+msgstr ""
+
+#: ../../changelog.rst:300
+msgid "Refactor api"
+msgstr ""
+

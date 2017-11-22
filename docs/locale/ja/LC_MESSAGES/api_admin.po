@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012–2016, Bojan Mihelac
+# This file is distributed under the same license as the
+# django-import-export package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-import-export 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-20 05:32-0600\n"
+"PO-Revision-Date: 2017-11-23 02:00+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#: ../../api_admin.rst:3
+msgid "Admin"
+msgstr ""
+
+#: ../../api_admin.rst:5
+msgid ""
+"For instructions on how to use the models and mixins in this module, "
+"please refer to :ref:`admin-integration`."
+msgstr ""
+"このモジュールでモデルとミックスインを使用する方法については、 :ref:"
+"`admin-integration` を参照してください。"
+
+#: import_export.admin.DEFAULT_FORMATS:1 of
+msgid ""
+"These are the default formats for import and export. Whether they can be "
+"used or not is depending on their implementation in the tablib library."
+msgstr ""
+"これらは、インポートとエクスポートのデフォルトの形式です。それらを使用で"
+"きるかどうかは、tablibライブラリの実装に依存します。"
+
+#: import_export.admin.ExportActionModelAdmin:1 of
+msgid ""
+"Subclass of ModelAdmin with export functionality implemented as an admin "
+"action."
+msgstr ""
+"ModelAdminのサブクラスで、エクスポート機能がadminアクションとして実装され"
+"ています。"
+
+#: import_export.admin.ExportActionModelAdmin.export_admin_action:1 of
+msgid "Exports the selected rows using file_format."
+msgstr "選択した行をfile_formatを使用してエクスポートします。"
+
+#: import_export.admin.ExportMixin:1 of
+msgid "Export mixin."
+msgstr "mixinをエクスポートします。"
+
+#: import_export.admin.ExportMixin.change_list_template:1
+#: import_export.admin.ImportExportMixin.change_list_template:1
+#: import_export.admin.ImportMixin.change_list_template:1 of
+msgid "template for change_list view"
+msgstr "change_listビューのテンプレート"
+
+#: import_export.admin.ExportMixin.export_template_name:1 of
+msgid "template for export view"
+msgstr "エクスポートビューのテンプレート"
+
+#: import_export.admin.ExportMixin.formats:1 of
+msgid "available export formats"
+msgstr "利用可能なエクスポート形式"
+
+#: import_export.admin.ExportMixin.get_export_data:1 of
+msgid "Returns file_format representation for given queryset."
+msgstr "与えられたクエリーセットのfile_format表現を返します。"
+
+#: import_export.admin.ExportMixin.get_export_formats:1 of
+msgid "Returns available export formats."
+msgstr "使用可能なエクスポート形式を返します。"
+
+#: import_export.admin.ExportMixin.get_export_queryset:1 of
+msgid "Returns export queryset."
+msgstr "エクスポートクエリセットを返します。"
+
+#: import_export.admin.ExportMixin.get_export_queryset:3 of
+msgid "Default implementation respects applied search and filters."
+msgstr "デフォルトの実装では、適用された検索とフィルタが適用されます。"
+
+#: import_export.admin.ExportMixin.get_export_resource_class:1 of
+msgid "Returns ResourceClass to use for export."
+msgstr "エクスポートに使用するResourceClassを返します。"
+
+#: import_export.admin.ExportMixin.resource_class:1
+#: import_export.admin.ImportMixin.resource_class:1 of
+msgid "resource class"
+msgstr "resourceクラス"
+
+#: import_export.admin.ExportMixin.to_encoding:1 of
+msgid "export data encoding"
+msgstr "エクスポートデータエンコーディング"
+
+#: import_export.admin.ImportExportActionModelAdmin:1 of
+msgid ""
+"Subclass of ExportActionModelAdmin with import/export functionality. "
+"Export functionality is implemented as an admin action."
+msgstr ""
+"インポート/エクスポート機能を持つExportActionModelAdminのサブクラスです。"
+"エクスポート機能はadminアクションとして実装されています。"
+
+#: import_export.admin.ImportExportMixin:1 of
+msgid "Import and export mixin."
+msgstr "mixinのインポートとエクスポート。"
+
+#: import_export.admin.ImportExportModelAdmin:1 of
+msgid "Subclass of ModelAdmin with import/export functionality."
+msgstr "インポート/エクスポート機能を持つModelAdminのサブクラスです。"
+
+#: import_export.admin.ImportMixin:1 of
+msgid "Import mixin."
+msgstr "mixinをインポートします"
+
+#: import_export.admin.ImportMixin.formats:1 of
+msgid "available import formats"
+msgstr "利用可能なインポート形式"
+
+#: import_export.admin.ImportMixin.from_encoding:1 of
+msgid "import data encoding"
+msgstr "インポートデータをエンコード"
+
+#: import_export.admin.ImportMixin.get_import_formats:1 of
+msgid "Returns available import formats."
+msgstr "使用可能なインポート形式を返します。"
+
+#: import_export.admin.ImportMixin.get_import_resource_class:1 of
+msgid "Returns ResourceClass to use for import."
+msgstr "インポートに使用するResourceClassを返します。"
+
+#: import_export.admin.ImportMixin.import_action:1 of
+msgid ""
+"Perform a dry_run of the import to make sure the import will not result "
+"in errors.  If there where no error, save the user uploaded file to a "
+"local temp file that will be used by 'process_import' for the actual "
+"import."
+msgstr ""
+"インポートのdry_runを実行して、インポートでエラーが発生しないことを確認し"
+"ます。エラーがない場合は、実際にインポートするために `process_import` で"
+"使用されるローカルの一時ファイルにユーザーがアップロードしたファイルを保"
+"存します。"
+
+#: import_export.admin.ImportMixin.import_template_name:1 of
+msgid "template for import view"
+msgstr "インポートビューのテンプレート"
+
+#: import_export.admin.ImportMixin.process_import:1 of
+msgid ""
+"Perform the actual import action (after the user has confirmed he wishes "
+"to import)"
+msgstr ""
+"実際のインポートアクションを実行する（ユーザーがインポートを確認した後）"

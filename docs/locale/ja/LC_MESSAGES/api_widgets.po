@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012–2016, Bojan Mihelac
+# This file is distributed under the same license as the
+# django-import-export package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: django-import-export 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-20 05:32-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+
+#: ../../api_widgets.rst:3
+msgid "Widgets"
+msgstr ""
+
+#: import_export.widgets.Widget:1 of
+msgid ""
+"A Widget takes care of converting between import and export "
+"representations."
+msgstr ""
+
+#: import_export.widgets.Widget:3 of
+msgid ""
+"This is achieved by the two methods, "
+":meth:`~import_export.widgets.Widget.clean` and "
+":meth:`~import_export.widgets.Widget.render`."
+msgstr ""
+
+#: import_export.widgets.Widget.clean:1 of
+msgid "Returns an appropriate Python object for an imported value."
+msgstr ""
+
+#: import_export.widgets.Widget.clean:3 of
+msgid ""
+"For example, if you import a value from a spreadsheet, "
+":meth:`~import_export.widgets.Widget.clean` handles conversion of this "
+"value into the corresponding Python object."
+msgstr ""
+
+#: import_export.widgets.Widget.clean:7 of
+msgid ""
+"Numbers or dates can be *cleaned* to their respective data types and "
+"don't have to be imported as Strings."
+msgstr ""
+
+#: import_export.widgets.Widget.render:1 of
+msgid "Returns an export representation of a Python value."
+msgstr ""
+
+#: import_export.widgets.Widget.render:3 of
+msgid ""
+"For example, if you have an object you want to export, "
+":meth:`~import_export.widgets.Widget.render` takes care of converting the"
+" object's field to a value that can be written to a spreadsheet."
+msgstr ""
+
+#: import_export.widgets.IntegerWidget:1 of
+msgid "Widget for converting integer fields."
+msgstr ""
+
+#: import_export.widgets.DecimalWidget:1 of
+msgid "Widget for converting decimal fields."
+msgstr ""
+
+#: import_export.widgets.CharWidget:1 of
+msgid "Widget for converting text fields."
+msgstr ""
+
+#: import_export.widgets.BooleanWidget:1 of
+msgid "Widget for converting boolean fields."
+msgstr ""
+
+#: import_export.widgets.DateTimeWidget:1 import_export.widgets.DateWidget:1 of
+msgid "Widget for converting date fields."
+msgstr ""
+
+#: import_export.widgets.DateWidget:3 import_export.widgets.TimeWidget:3 of
+msgid "Takes optional ``format`` parameter."
+msgstr ""
+
+#: import_export.widgets.TimeWidget:1 of
+msgid "Widget for converting time fields."
+msgstr ""
+
+#: import_export.widgets.DateTimeWidget:3 of
+#, python-format
+msgid ""
+"Takes optional ``format`` parameter. If none is set, either "
+"``settings.DATETIME_INPUT_FORMATS`` or ``\"%Y-%m-%d %H:%M:%S\"`` is used."
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget:1 of
+msgid ""
+"Widget for a ``ForeignKey`` field which looks up a related model using "
+"\"natural keys\" in both export an import."
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget:4 of
+msgid ""
+"The lookup field defaults to using the primary key (``pk``) as lookup "
+"criterion but can be customised to use any field on the related model."
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget:7 of
+msgid "Unlike specifying a related field in your resource like so…"
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget:14 of
+msgid ""
+"…using a :class:`~import_export.widgets.ForeignKeyWidget` has the "
+"advantage that it can not only be used for exporting, but also importing "
+"data with foreign key relationships."
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget:18 of
+msgid ""
+"Here's an example on how to use "
+":class:`~import_export.widgets.ForeignKeyWidget` to lookup related "
+"objects using ``Author.name`` instead of ``Author.pk``::"
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget
+#: import_export.widgets.ForeignKeyWidget.get_queryset
+#: import_export.widgets.ManyToManyWidget of
+msgid "Parameters"
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget:31 of
+msgid "The Model the ForeignKey refers to (required)."
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget:32 of
+msgid "A field on the related model used for looking up a particular object."
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget.get_queryset:1 of
+msgid "Returns a queryset of all objects for this Model."
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget.get_queryset:3 of
+msgid ""
+"Overwrite this method if you want to limit the pool of objects from which"
+" the related object is retrieved."
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget.get_queryset:6 of
+msgid "The field's value in the datasource."
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget.get_queryset:7 of
+msgid "The datasource's current row."
+msgstr ""
+
+#: import_export.widgets.ForeignKeyWidget.get_queryset:9 of
+msgid ""
+"As an example; if you'd like to have ForeignKeyWidget look up a Person by"
+" their pre- **and** lastname column, you could subclass the widget like "
+"so::"
+msgstr ""
+
+#: import_export.widgets.ManyToManyWidget:1 of
+msgid ""
+"Widget that converts between representations of a ManyToMany "
+"relationships as a list and an actual ManyToMany field."
+msgstr ""
+
+#: import_export.widgets.ManyToManyWidget:4 of
+msgid "The model the ManyToMany field refers to (required)."
+msgstr ""
+
+#: import_export.widgets.ManyToManyWidget:5 of
+msgid "Defaults to ``','``."
+msgstr ""
+
+#: import_export.widgets.ManyToManyWidget:6 of
+msgid "A field on the related model. Default is ``pk``."
+msgstr ""
+

@@ -1,0 +1,371 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2012–2016, Bojan Mihelac
+# This file is distributed under the same license as the
+# django-import-export package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-import-export 0.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-20 05:32-0600\n"
+"PO-Revision-Date: 2017-11-21 20:47+0900\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.5.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"X-Generator: Poedit 2.0.4\n"
+
+#: ../../getting_started.rst:3
+msgid "Getting started"
+msgstr "入門"
+
+#: ../../getting_started.rst:5
+msgid ""
+"For example purposes, we'll use a simplified book app. Here is our ``models."
+"py``::"
+msgstr ""
+"例えば、シンプルな書籍アプリを使用します。ここに ``model.py`` があります::"
+
+#: ../../getting_started.rst:40
+msgid "Creating import-export resource"
+msgstr "インポート・エクスポートのリソースを作成"
+
+#: ../../getting_started.rst:42
+msgid ""
+"To integrate `django-import-export` with our ``Book`` model, we will create a :"
+"class:`~import_export.resources.ModelResource` class in ``admin.py`` that will "
+"describe how this resource can be imported or exported::"
+msgstr ""
+"``Book`` モデルに `django-import-export` を統合するために、 ``admin.py`` に :"
+"class:`~import_export.resources.ModelResource` を作成し、このリソースをどのよう"
+"にインポートまたはエクスポート出来るようにするか記述します::"
+
+#: ../../getting_started.rst:57
+msgid "Exporting data"
+msgstr "データのエクスポート"
+
+#: ../../getting_started.rst:59
+msgid ""
+"Now that we have defined a :class:`~import_export.resources.ModelResource` "
+"class, we can export books::"
+msgstr ""
+":class:`~import_export.resources.ModelResource` クラスを定義したので書籍をエクス"
+"ポートすることが出来ます::"
+
+#: ../../getting_started.rst:69
+msgid "Customize resource options"
+msgstr "リソースオプションのカスタマイズ"
+
+#: ../../getting_started.rst:71
+msgid ""
+"By default :class:`~import_export.resources.ModelResource` introspects model "
+"fields and creates :class:`~import_export.fields.Field`-attributes with an "
+"appropriate :class:`~import_export.widgets.Widget` for each field."
+msgstr ""
+"デフォルトで :class:`~import_export.resources.ModelResource` はモデルフィールド"
+"をイントロスペクトし、各フィールドに適切な :class:`~import_export.widgets."
+"Widget` を持つ:class:`~import_export.fields.Field` 属性を作成します。"
+
+#: ../../getting_started.rst:75
+msgid ""
+"To affect which model fields will be included in an import-export resource, use "
+"the ``fields`` option to whitelist fields::"
+msgstr ""
+"インポート・エクスポートリソースに含めるモデルフィールドを変更するには、 "
+"``field`` オプションをホワイトリストに追加します::"
+
+#: ../../getting_started.rst:84
+msgid "Or the ``exclude`` option to blacklist fields::"
+msgstr "除外したい場合は、 ``eclude`` オプションにブラックリストを追加します::"
+
+#: ../../getting_started.rst:92
+msgid ""
+"An explicit order for exporting fields can be set using the ``export_order`` "
+"option::"
+msgstr ""
+"エクスポートするフィールドの順序を明示的にするには、 ``export_order`` オプション"
+"を使用して設定します::"
+
+#: ../../getting_started.rst:101
+msgid ""
+"The default field for object identification is ``id``, you can optionally set "
+"which fields are used as the ``id`` when importing::"
+msgstr ""
+"オブジェクトを識別するデフォルトのフィールドは ``id`` です。インポート時に "
+"``id`` として使用するフィールドをオプションで設定出来ます::"
+
+#: ../../getting_started.rst:110
+msgid ""
+"When defining :class:`~import_export.resources.ModelResource` fields it is "
+"possible to follow model relationships::"
+msgstr ""
+":class:`~import_export.resources.ModelResource` フィールドを定義する時、モデルの"
+"関連に従うことが可能です::"
+
+#: ../../getting_started.rst:121
+msgid ""
+"Following relationship fields sets ``field`` as readonly, meaning this field "
+"will be skipped when importing data."
+msgstr ""
+"次の関連フィールドは読み込み専用の ``field`` に設定します。つまり、データのイン"
+"ポート時にこのフィールドはスキップされます。"
+
+#: ../../getting_started.rst:124
+msgid ""
+"By default all records will be imported, even if no changes are detected. This "
+"can be changed setting the ``skip_unchanged`` option. Also, the "
+"``report_skipped`` option controls whether skipped records appear in the import "
+"``Result`` object, and if using the admin whether skipped records will show in "
+"the import preview page::"
+msgstr ""
+"変更が検出されなくても、デフォルトではすべてのレコードがインポートされます。これ"
+"は ``skip_unchanged`` オプションを設定することで変更出来ます。また、 "
+"`report_skipped`` オプションはスキップされたレコードがインポートの ``Result`` オ"
+"ブジェクトに表示されるかを制御し、もしadminを使っていたらスキップされたレコード"
+"がインポートプレビューページに表示するかどうかを制御します::"
+
+#: ../../getting_started.rst:139
+msgid ":doc:`/api_resources`"
+msgstr ""
+
+#: ../../getting_started.rst:143
+msgid "Declaring fields"
+msgstr "フィールドの宣言"
+
+#: ../../getting_started.rst:145
+msgid ""
+"It is possible to override a resource field to change some of its options::"
+msgstr "オプションを変更してリソースフィールドを上書きすることは可能です::"
+
+#: ../../getting_started.rst:156
+msgid "Other fields that don't exist in the target model may be added::"
+msgstr "ターゲットモデルに存在しない他のフィールを追加することが出来ます::"
+
+#: ../../getting_started.rst:168
+msgid ":doc:`/api_fields`"
+msgstr ""
+
+#: ../../getting_started.rst:169
+msgid "Available field types and options."
+msgstr "利用可能なフィールドタイプとオプション。"
+
+#: ../../getting_started.rst:173
+msgid "Advanced data manipulation"
+msgstr "高度なデータ操作"
+
+#: ../../getting_started.rst:175
+msgid ""
+"Not all data can be easily extracted from an object/model attribute. In order "
+"to turn complicated data model into a (generally simpler) processed data "
+"structure, ``dehydrate_<fieldname>`` method should be defined::"
+msgstr ""
+"すべてのデータをオブジェクト/モデル属性から簡単に抽出することは出来ません。複雑"
+"なデータモデルを処理されたデータ構造(一般的にはよりシンプル)に変換するには、 "
+"``dehydrate_<fieldname>`` メソッドを定義する必要があります::"
+
+#: ../../getting_started.rst:192
+msgid "Customize widgets"
+msgstr "ウィジェットのカスタマイズ"
+
+#: ../../getting_started.rst:194
+msgid ""
+"A :class:`~import_export.resources.ModelResource` creates a field with a "
+"default widget for a given field type. If the widget should be initialized with "
+"different arguments, set the ``widgets`` dict."
+msgstr ""
+":class:`~import_export.resources.ModelResource` は、与えられたフィールドタイプの"
+"デフォルトウィジェットでフィールドを作成します。もしウィジェットを異なる引数で初"
+"期化する必要がある場合、 ``widgets`` 辞書を設定します。"
+
+#: ../../getting_started.rst:198
+msgid ""
+"In this example widget, the ``published`` field is overriden to use a different "
+"date format. This format will be used both for importing and exporting resource."
+msgstr ""
+"このサンプルウィジェットでは、 ``published`` フィールドが異なる日付形式を使うよ"
+"う上書きされています。この形式はインポートとエクスポートリソースの両方で使用され"
+"ます。"
+
+#: ../../getting_started.rst:214
+msgid ":doc:`/api_widgets`"
+msgstr ""
+
+#: ../../getting_started.rst:215
+msgid "available widget types and options."
+msgstr "利用可能なウィジェットタイプとオプション。"
+
+#: ../../getting_started.rst:218
+msgid "Importing data"
+msgstr "データのインポート"
+
+#: ../../getting_started.rst:220
+msgid "Let's import some data!"
+msgstr "いくつかのデータをインポートしましょう!"
+
+#: ../../getting_started.rst:236
+msgid ""
+"In the fourth line we use :func:`~import_export.resources."
+"modelresource_factory` to create a default :class:`~import_export.resources."
+"ModelResource`. The ModelResource class created this way is equal to the one "
+"shown in the example in section :ref:`base-modelresource`."
+msgstr ""
+"4行目では、 :func:`~import_export.resources.modelresource_factory` を使用してデ"
+"フォルトの :class:`~import_export.resources.ModelResource` を作成します。この方"
+"法で作成されたModelResourceクラスは、 :ref:`base-modelresource` セクションの例で"
+"示されているものと同じです。"
+
+#: ../../getting_started.rst:241
+msgid ""
+"In fifth line a :class:`~tablib.Dataset` with columns ``id`` and ``name``, and "
+"one book entry, are created. A field for a primary key field (in this case, "
+"``id``) always needs to be present."
+msgstr ""
+"5行目では、 ``id`` と ``name`` および一つの書籍エントリを持つ :class:`~tablib."
+"Dataset` が作成されます。主キーフィールド(この場合は、 ``id`` )のフィールドは、"
+"常に存在する必要があります。"
+
+#: ../../getting_started.rst:243
+msgid ""
+"In the rest of the code we first pretend to import data using :meth:"
+"`~import_export.resources.Resource.import_data` and ``dry_run`` set, then check "
+"for any errors and actually import data this time."
+msgstr ""
+"コードの残りの部分では、最初に :meth:`~import_export.resources.Resource."
+"import_data` と ``dry_run`` を使ってインポートして、エラーチェックをしてから実際"
+"にデータをインポートします。"
+
+#: ../../getting_started.rst:249
+msgid ":doc:`/import_workflow`"
+msgstr ""
+
+#: ../../getting_started.rst:250
+msgid ""
+"for a detailed description of the import workflow and its customization options."
+msgstr "インポートのワークフローとそのカスタマイズオプションの詳細について。"
+
+#: ../../getting_started.rst:254
+msgid "Deleting data"
+msgstr "データの削除"
+
+#: ../../getting_started.rst:256
+msgid ""
+"To delete objects during import, implement the :meth:`~import_export.resources."
+"Resource.for_delete` method on your :class:`~import_export.resources.Resource` "
+"class."
+msgstr ""
+"インポート中にオブジェクトを削除するには、 :class:`~import_export.resources."
+"Resource` クラスに :meth:`~import_export.resources.Resouce.for_delete` を実装し"
+"ます。"
+
+#: ../../getting_started.rst:260
+msgid ""
+"The following is an example resource which expects a ``delete`` field in the "
+"dataset. An import using this resource will delete model instances for rows "
+"that have their column ``delete`` set to ``1``::"
+msgstr ""
+"以下は、データセットに ``delete`` フィールドが存在するリソースの例です。このリ"
+"ソースを使用してインポートすると、 ``delete`` カラムが ``1`` にセットされている"
+"行のモデルインスタンスが削除されます::"
+
+#: ../../getting_started.rst:275
+msgid "Signals"
+msgstr "シグナル"
+
+#: ../../getting_started.rst:277
+msgid ""
+"To hook in the import export workflow, you can connect to ``post_import``, "
+"``post_export`` signals:"
+msgstr ""
+"インポート・エクスポートのワークフローをフックするため、 ``post_import`` 、 "
+"``post_export`` に接続出来ます:"
+
+#: ../../getting_started.rst:279
+msgid ""
+"from django.dispatch import receiver from import_export.signals import "
+"post_import, post_export"
+msgstr ""
+
+#: ../../getting_started.rst:282
+msgid ""
+"@receiver(post_import, dispatch_uid='balabala...') def _post_import(model, "
+"**kwargs):"
+msgstr ""
+
+#: ../../getting_started.rst:284
+msgid "# model is the actual model instance which after import pass"
+msgstr ""
+
+#: ../../getting_started.rst:287
+msgid ""
+"@receiver(post_export, dispatch_uid='balabala...') def _post_export(model, "
+"**kwargs):"
+msgstr ""
+
+#: ../../getting_started.rst:289
+msgid "# model is the actual model instance which after export pass"
+msgstr ""
+
+#: ../../getting_started.rst:296
+msgid "Admin integration"
+msgstr "Adminとの統合"
+
+#: ../../getting_started.rst:299
+msgid "Exporting via list filters"
+msgstr "リストフィルタによるエクスポート"
+
+#: ../../getting_started.rst:301
+msgid ""
+"Admin integration is achieved by subclassing :class:`~import_export.admin."
+"ImportExportModelAdmin` or one of the available mixins (:class:`~import_export."
+"admin.ImportMixin`, :class:`~import_export.admin.ExportMixin`, :class:"
+"`~import_export.admin.ImportExportMixin`)::"
+msgstr ""
+"adminの統合は、 :class:`~import_export.admin.ImportExportModelAdmin` または利用"
+"なミックスイン(:class:`~import_export.admin.ImportMixin`, :class:"
+"`~import_export.admin.ExportMixin`, :class:`~import_export.admin."
+"ImportExportMixin`) のサブクラス化で実現されます::"
+
+#: ../../getting_started.rst:315
+msgid "A screenshot of the change view with Import and Export buttons."
+msgstr "インポートとエクスポートボタンを持つ変更ビューのスクリーンショット。"
+
+#: ../../getting_started.rst:319
+msgid "A screenshot of the import view."
+msgstr "インポートビューのスクリーンショット。"
+
+#: ../../getting_started.rst:323
+msgid "A screenshot of the confirm import view."
+msgstr "インポート確認ビューのスクリーンショット。"
+
+#: ../../getting_started.rst:327
+msgid "Exporting via admin action"
+msgstr "adminアクションによるエクスポート"
+
+#: ../../getting_started.rst:329
+msgid ""
+"Another approach to exporting data is by subclassing :class:`~import_export."
+"admin.ImportExportActionModelAdmin` which implements export as an admin action. "
+"As a result it's possible to export a list of objects selected on the change "
+"list page::"
+msgstr ""
+"データをエクスポートするもう一つのアプローチは、adminアクションとしてエクスポー"
+"トを実装する :class:`~import_export.admin.ImportExportActionModelAdmin` をサブク"
+"ラス化することです。結果として、変更リストページで選択されたオブジェクトのリスト"
+"をエクスポートすることが出来ます::"
+
+#: ../../getting_started.rst:343
+msgid "A screenshot of the change view with Import and Export as an admin action."
+msgstr ""
+"adminアクションのインポートとエクスポートを持つ変更ビューのスクリーンショット。"
+
+#: ../../getting_started.rst:348
+msgid ":doc:`/api_admin`"
+msgstr ""
+
+#: ../../getting_started.rst:349
+msgid "available mixins and options."
+msgstr "利用可能なミックスインとオプション。"
