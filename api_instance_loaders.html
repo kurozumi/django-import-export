@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Instance loaders &mdash; django-import-export 0.5.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="django-import-export 0.5.1 ドキュメント" href="index.html"/>
+        <link rel="next" title="Temporary storages" href="api_tmp_storages.html"/>
+        <link rel="prev" title="Fields" href="api_fields.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> django-import-export
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザーガイド</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">インストールと設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">入門</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_workflow.html">インポートデータのワークフロー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">APIドキュメント</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="api_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_widgets.html">Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_fields.html">Fields</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Instance loaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_tmp_storages.html">Temporary storages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_results.html">Results</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">django-import-export</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Instance loaders</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-import_export.instance_loaders">
+<span id="instance-loaders"></span><h1>Instance loaders<a class="headerlink" href="#module-import_export.instance_loaders" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<dl class="class">
+<dt id="import_export.instance_loaders.BaseInstanceLoader">
+<em class="property">class </em><code class="descclassname">import_export.instance_loaders.</code><code class="descname">BaseInstanceLoader</code><span class="sig-paren">(</span><em>resource</em>, <em>dataset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.instance_loaders.BaseInstanceLoader" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Base abstract implementation of instance loader.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.instance_loaders.ModelInstanceLoader">
+<em class="property">class </em><code class="descclassname">import_export.instance_loaders.</code><code class="descname">ModelInstanceLoader</code><span class="sig-paren">(</span><em>resource</em>, <em>dataset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.instance_loaders.ModelInstanceLoader" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Instance loader for Django model.</p>
+<p>Lookup for model instance by <code class="docutils literal"><span class="pre">import_id_fields</span></code>.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.instance_loaders.CachedInstanceLoader">
+<em class="property">class </em><code class="descclassname">import_export.instance_loaders.</code><code class="descname">CachedInstanceLoader</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.instance_loaders.CachedInstanceLoader" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Loads all possible model instances in dataset avoid hitting database for
+every <code class="docutils literal"><span class="pre">get_instance</span></code> call.</p>
+<p>This instance loader work only when there is one <code class="docutils literal"><span class="pre">import_id_fields</span></code>
+field.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api_tmp_storages.html" class="btn btn-neutral float-right" title="Temporary storages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api_fields.html" class="btn btn-neutral" title="Fields" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012–2016, Bojan Mihelac.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.5.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

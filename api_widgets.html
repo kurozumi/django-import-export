@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Widgets &mdash; django-import-export 0.5.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="django-import-export 0.5.1 ドキュメント" href="index.html"/>
+        <link rel="next" title="Fields" href="api_fields.html"/>
+        <link rel="prev" title="Resources" href="api_resources.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> django-import-export
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザーガイド</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">インストールと設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">入門</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_workflow.html">インポートデータのワークフロー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">APIドキュメント</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="api_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_resources.html">Resources</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_fields.html">Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_instance_loaders.html">Instance loaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_tmp_storages.html">Temporary storages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_results.html">Results</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">django-import-export</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Widgets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="widgets">
+<h1>Widgets<a class="headerlink" href="#widgets" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<dl class="class">
+<dt id="import_export.widgets.Widget">
+<em class="property">class </em><code class="descclassname">import_export.widgets.</code><code class="descname">Widget</code><a class="headerlink" href="#import_export.widgets.Widget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>A Widget takes care of converting between import and export representations.</p>
+<p>This is achieved by the two methods,
+<a class="reference internal" href="#import_export.widgets.Widget.clean" title="import_export.widgets.Widget.clean"><code class="xref py py-meth docutils literal"><span class="pre">clean()</span></code></a> and
+<a class="reference internal" href="#import_export.widgets.Widget.render" title="import_export.widgets.Widget.render"><code class="xref py py-meth docutils literal"><span class="pre">render()</span></code></a>.</p>
+<dl class="method">
+<dt id="import_export.widgets.Widget.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><em>value</em>, <em>row=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.widgets.Widget.clean" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns an appropriate Python object for an imported value.</p>
+<p>For example, if you import a value from a spreadsheet,
+<a class="reference internal" href="#import_export.widgets.Widget.clean" title="import_export.widgets.Widget.clean"><code class="xref py py-meth docutils literal"><span class="pre">clean()</span></code></a> handles conversion
+of this value into the corresponding Python object.</p>
+<p>Numbers or dates can be <em>cleaned</em> to their respective data types and
+don’t have to be imported as Strings.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="import_export.widgets.Widget.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>value</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.widgets.Widget.render" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns an export representation of a Python value.</p>
+<p>For example, if you have an object you want to export,
+<a class="reference internal" href="#import_export.widgets.Widget.render" title="import_export.widgets.Widget.render"><code class="xref py py-meth docutils literal"><span class="pre">render()</span></code></a> takes care of converting
+the object’s field to a value that can be written to a spreadsheet.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.widgets.IntegerWidget">
+<em class="property">class </em><code class="descclassname">import_export.widgets.</code><code class="descname">IntegerWidget</code><a class="headerlink" href="#import_export.widgets.IntegerWidget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Widget for converting integer fields.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.widgets.DecimalWidget">
+<em class="property">class </em><code class="descclassname">import_export.widgets.</code><code class="descname">DecimalWidget</code><a class="headerlink" href="#import_export.widgets.DecimalWidget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Widget for converting decimal fields.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.widgets.CharWidget">
+<em class="property">class </em><code class="descclassname">import_export.widgets.</code><code class="descname">CharWidget</code><a class="headerlink" href="#import_export.widgets.CharWidget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Widget for converting text fields.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.widgets.BooleanWidget">
+<em class="property">class </em><code class="descclassname">import_export.widgets.</code><code class="descname">BooleanWidget</code><a class="headerlink" href="#import_export.widgets.BooleanWidget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Widget for converting boolean fields.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.widgets.DateWidget">
+<em class="property">class </em><code class="descclassname">import_export.widgets.</code><code class="descname">DateWidget</code><span class="sig-paren">(</span><em>format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.widgets.DateWidget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Widget for converting date fields.</p>
+<p>Takes optional <code class="docutils literal"><span class="pre">format</span></code> parameter.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.widgets.TimeWidget">
+<em class="property">class </em><code class="descclassname">import_export.widgets.</code><code class="descname">TimeWidget</code><span class="sig-paren">(</span><em>format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.widgets.TimeWidget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Widget for converting time fields.</p>
+<p>Takes optional <code class="docutils literal"><span class="pre">format</span></code> parameter.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.widgets.DateTimeWidget">
+<em class="property">class </em><code class="descclassname">import_export.widgets.</code><code class="descname">DateTimeWidget</code><span class="sig-paren">(</span><em>format=None</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.widgets.DateTimeWidget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Widget for converting date fields.</p>
+<p>Takes optional <code class="docutils literal"><span class="pre">format</span></code> parameter. If none is set, either
+<code class="docutils literal"><span class="pre">settings.DATETIME_INPUT_FORMATS</span></code> or <code class="docutils literal"><span class="pre">&quot;%Y-%m-%d</span> <span class="pre">%H:%M:%S&quot;</span></code> is used.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.widgets.ForeignKeyWidget">
+<em class="property">class </em><code class="descclassname">import_export.widgets.</code><code class="descname">ForeignKeyWidget</code><span class="sig-paren">(</span><em>model</em>, <em>field='pk'</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.widgets.ForeignKeyWidget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Widget for a <code class="docutils literal"><span class="pre">ForeignKey</span></code> field which looks up a related model using
+「natural keys」 in both export an import.</p>
+<p>The lookup field defaults to using the primary key (<code class="docutils literal"><span class="pre">pk</span></code>) as lookup
+criterion but can be customised to use any field on the related model.</p>
+<p>Unlike specifying a related field in your resource like so…</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;author__name&#39;</span><span class="p">,)</span>
+</pre></div>
+</div>
+<p>…using a <a class="reference internal" href="#import_export.widgets.ForeignKeyWidget" title="import_export.widgets.ForeignKeyWidget"><code class="xref py py-class docutils literal"><span class="pre">ForeignKeyWidget</span></code></a> has the
+advantage that it can not only be used for exporting, but also importing
+data with foreign key relationships.</p>
+<p>Here’s an example on how to use
+<a class="reference internal" href="#import_export.widgets.ForeignKeyWidget" title="import_export.widgets.ForeignKeyWidget"><code class="xref py py-class docutils literal"><span class="pre">ForeignKeyWidget</span></code></a> to lookup related objects
+using <code class="docutils literal"><span class="pre">Author.name</span></code> instead of <code class="docutils literal"><span class="pre">Author.pk</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span>
+        <span class="n">column_name</span><span class="o">=</span><span class="s1">&#39;author&#39;</span><span class="p">,</span>
+        <span class="n">attribute</span><span class="o">=</span><span class="s1">&#39;author&#39;</span><span class="p">,</span>
+        <span class="n">widget</span><span class="o">=</span><span class="n">ForeignKeyWidget</span><span class="p">(</span><span class="n">Author</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">))</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;author&#39;</span><span class="p">,)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> – The Model the ForeignKey refers to (required).</li>
+<li><strong>field</strong> – A field on the related model used for looking up a particular object.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="import_export.widgets.ForeignKeyWidget.get_queryset">
+<code class="descname">get_queryset</code><span class="sig-paren">(</span><em>value</em>, <em>row</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.widgets.ForeignKeyWidget.get_queryset" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Returns a queryset of all objects for this Model.</p>
+<p>Overwrite this method if you want to limit the pool of objects from
+which the related object is retrieved.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>value</strong> – The field’s value in the datasource.</li>
+<li><strong>row</strong> – The datasource’s current row.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>As an example; if you’d like to have ForeignKeyWidget look up a Person
+by their pre- <strong>and</strong> lastname column, you could subclass the widget
+like so:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FullNameForeignKeyWidget</span><span class="p">(</span><span class="n">ForeignKeyWidget</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+            <span class="n">first_name__iexact</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;first_name&quot;</span><span class="p">],</span>
+            <span class="n">last_name__iexact</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;last_name&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.widgets.ManyToManyWidget">
+<em class="property">class </em><code class="descclassname">import_export.widgets.</code><code class="descname">ManyToManyWidget</code><span class="sig-paren">(</span><em>model</em>, <em>separator=None</em>, <em>field=None</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.widgets.ManyToManyWidget" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Widget that converts between representations of a ManyToMany relationships
+as a list and an actual ManyToMany field.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first last simple">
+<li><strong>model</strong> – The model the ManyToMany field refers to (required).</li>
+<li><strong>separator</strong> – Defaults to <code class="docutils literal"><span class="pre">','</span></code>.</li>
+<li><strong>field</strong> – A field on the related model. Default is <code class="docutils literal"><span class="pre">pk</span></code>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api_fields.html" class="btn btn-neutral float-right" title="Fields" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api_resources.html" class="btn btn-neutral" title="Resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012–2016, Bojan Mihelac.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.5.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

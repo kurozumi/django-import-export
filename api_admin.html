@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Admin &mdash; django-import-export 0.5.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="django-import-export 0.5.1 ドキュメント" href="index.html"/>
+        <link rel="next" title="Resources" href="api_resources.html"/>
+        <link rel="prev" title="Changelog" href="changelog.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> django-import-export
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザーガイド</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">インストールと設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">入門</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_workflow.html">インポートデータのワークフロー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">APIドキュメント</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_widgets.html">Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_fields.html">Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_instance_loaders.html">Instance loaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_tmp_storages.html">Temporary storages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_results.html">Results</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">django-import-export</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Admin</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="admin">
+<h1>Admin<a class="headerlink" href="#admin" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このモジュールでモデルとミックスインを使用する方法については、 <a class="reference internal" href="getting_started.html#admin-integration"><span class="std std-ref">Adminとの統合</span></a> を参照してください。</p>
+<span class="target" id="module-import_export.admin"></span><dl class="data">
+<dt id="import_export.admin.DEFAULT_FORMATS">
+<code class="descclassname">import_export.admin.</code><code class="descname">DEFAULT_FORMATS</code><em class="property"> = (&lt;class 'import_export.formats.base_formats.CSV'&gt;, &lt;class 'import_export.formats.base_formats.XLS'&gt;, &lt;class 'import_export.formats.base_formats.XLSX'&gt;, &lt;class 'import_export.formats.base_formats.TSV'&gt;, &lt;class 'import_export.formats.base_formats.ODS'&gt;, &lt;class 'import_export.formats.base_formats.JSON'&gt;, &lt;class 'import_export.formats.base_formats.YAML'&gt;, &lt;class 'import_export.formats.base_formats.HTML'&gt;)</em><a class="headerlink" href="#import_export.admin.DEFAULT_FORMATS" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>これらは、インポートとエクスポートのデフォルトの形式です。それらを使用できるかどうかは、tablibライブラリの実装に依存します。</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.admin.ExportActionModelAdmin">
+<em class="property">class </em><code class="descclassname">import_export.admin.</code><code class="descname">ExportActionModelAdmin</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.admin.ExportActionModelAdmin" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ModelAdminのサブクラスで、エクスポート機能がadminアクションとして実装されています。</p>
+<dl class="method">
+<dt id="import_export.admin.ExportActionModelAdmin.export_admin_action">
+<code class="descname">export_admin_action</code><span class="sig-paren">(</span><em>request</em>, <em>queryset</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.admin.ExportActionModelAdmin.export_admin_action" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>選択した行をfile_formatを使用してエクスポートします。</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.admin.ExportMixin">
+<em class="property">class </em><code class="descclassname">import_export.admin.</code><code class="descname">ExportMixin</code><a class="headerlink" href="#import_export.admin.ExportMixin" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>mixinをエクスポートします。</p>
+<dl class="attribute">
+<dt id="import_export.admin.ExportMixin.change_list_template">
+<code class="descname">change_list_template</code><em class="property"> = 'admin/import_export/change_list_export.html'</em><a class="headerlink" href="#import_export.admin.ExportMixin.change_list_template" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>change_listビューのテンプレート</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="import_export.admin.ExportMixin.export_template_name">
+<code class="descname">export_template_name</code><em class="property"> = 'admin/import_export/export.html'</em><a class="headerlink" href="#import_export.admin.ExportMixin.export_template_name" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>エクスポートビューのテンプレート</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="import_export.admin.ExportMixin.formats">
+<code class="descname">formats</code><em class="property"> = (&lt;class 'import_export.formats.base_formats.CSV'&gt;, &lt;class 'import_export.formats.base_formats.XLS'&gt;, &lt;class 'import_export.formats.base_formats.XLSX'&gt;, &lt;class 'import_export.formats.base_formats.TSV'&gt;, &lt;class 'import_export.formats.base_formats.ODS'&gt;, &lt;class 'import_export.formats.base_formats.JSON'&gt;, &lt;class 'import_export.formats.base_formats.YAML'&gt;, &lt;class 'import_export.formats.base_formats.HTML'&gt;)</em><a class="headerlink" href="#import_export.admin.ExportMixin.formats" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>利用可能なエクスポート形式</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="import_export.admin.ExportMixin.get_export_data">
+<code class="descname">get_export_data</code><span class="sig-paren">(</span><em>file_format</em>, <em>queryset</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.admin.ExportMixin.get_export_data" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>与えられたクエリーセットのfile_format表現を返します。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="import_export.admin.ExportMixin.get_export_formats">
+<code class="descname">get_export_formats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#import_export.admin.ExportMixin.get_export_formats" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>使用可能なエクスポート形式を返します。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="import_export.admin.ExportMixin.get_export_queryset">
+<code class="descname">get_export_queryset</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.admin.ExportMixin.get_export_queryset" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>エクスポートクエリセットを返します。</p>
+<p>デフォルトの実装では、適用された検索とフィルタが適用されます。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="import_export.admin.ExportMixin.get_export_resource_class">
+<code class="descname">get_export_resource_class</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#import_export.admin.ExportMixin.get_export_resource_class" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>エクスポートに使用するResourceClassを返します。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="import_export.admin.ExportMixin.resource_class">
+<code class="descname">resource_class</code><em class="property"> = None</em><a class="headerlink" href="#import_export.admin.ExportMixin.resource_class" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>resourceクラス</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="import_export.admin.ExportMixin.to_encoding">
+<code class="descname">to_encoding</code><em class="property"> = 'utf-8'</em><a class="headerlink" href="#import_export.admin.ExportMixin.to_encoding" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>エクスポートデータエンコーディング</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.admin.ImportExportActionModelAdmin">
+<em class="property">class </em><code class="descclassname">import_export.admin.</code><code class="descname">ImportExportActionModelAdmin</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.admin.ImportExportActionModelAdmin" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>インポート/エクスポート機能を持つExportActionModelAdminのサブクラスです。エクスポート機能はadminアクションとして実装されています。</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.admin.ImportExportMixin">
+<em class="property">class </em><code class="descclassname">import_export.admin.</code><code class="descname">ImportExportMixin</code><a class="headerlink" href="#import_export.admin.ImportExportMixin" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>mixinのインポートとエクスポート。</p>
+<dl class="attribute">
+<dt id="import_export.admin.ImportExportMixin.change_list_template">
+<code class="descname">change_list_template</code><em class="property"> = 'admin/import_export/change_list_import_export.html'</em><a class="headerlink" href="#import_export.admin.ImportExportMixin.change_list_template" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>change_listビューのテンプレート</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.admin.ImportExportModelAdmin">
+<em class="property">class </em><code class="descclassname">import_export.admin.</code><code class="descname">ImportExportModelAdmin</code><span class="sig-paren">(</span><em>model</em>, <em>admin_site</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.admin.ImportExportModelAdmin" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>インポート/エクスポート機能を持つModelAdminのサブクラスです。</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="import_export.admin.ImportMixin">
+<em class="property">class </em><code class="descclassname">import_export.admin.</code><code class="descname">ImportMixin</code><a class="headerlink" href="#import_export.admin.ImportMixin" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>mixinをインポートします</p>
+<dl class="attribute">
+<dt id="import_export.admin.ImportMixin.change_list_template">
+<code class="descname">change_list_template</code><em class="property"> = 'admin/import_export/change_list_import.html'</em><a class="headerlink" href="#import_export.admin.ImportMixin.change_list_template" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>change_listビューのテンプレート</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="import_export.admin.ImportMixin.formats">
+<code class="descname">formats</code><em class="property"> = (&lt;class 'import_export.formats.base_formats.CSV'&gt;, &lt;class 'import_export.formats.base_formats.XLS'&gt;, &lt;class 'import_export.formats.base_formats.XLSX'&gt;, &lt;class 'import_export.formats.base_formats.TSV'&gt;, &lt;class 'import_export.formats.base_formats.ODS'&gt;, &lt;class 'import_export.formats.base_formats.JSON'&gt;, &lt;class 'import_export.formats.base_formats.YAML'&gt;, &lt;class 'import_export.formats.base_formats.HTML'&gt;)</em><a class="headerlink" href="#import_export.admin.ImportMixin.formats" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>利用可能なインポート形式</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="import_export.admin.ImportMixin.from_encoding">
+<code class="descname">from_encoding</code><em class="property"> = 'utf-8'</em><a class="headerlink" href="#import_export.admin.ImportMixin.from_encoding" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>インポートデータをエンコード</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="import_export.admin.ImportMixin.get_import_formats">
+<code class="descname">get_import_formats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#import_export.admin.ImportMixin.get_import_formats" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>使用可能なインポート形式を返します。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="import_export.admin.ImportMixin.get_import_resource_class">
+<code class="descname">get_import_resource_class</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#import_export.admin.ImportMixin.get_import_resource_class" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>インポートに使用するResourceClassを返します。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="import_export.admin.ImportMixin.import_action">
+<code class="descname">import_action</code><span class="sig-paren">(</span><em>request</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.admin.ImportMixin.import_action" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>インポートのdry_runを実行して、インポートでエラーが発生しないことを確認します。エラーがない場合は、実際にインポートするために <cite>process_import</cite> で使用されるローカルの一時ファイルにユーザーがアップロードしたファイルを保存します。</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="import_export.admin.ImportMixin.import_template_name">
+<code class="descname">import_template_name</code><em class="property"> = 'admin/import_export/import.html'</em><a class="headerlink" href="#import_export.admin.ImportMixin.import_template_name" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>インポートビューのテンプレート</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="import_export.admin.ImportMixin.process_import">
+<code class="descname">process_import</code><span class="sig-paren">(</span><em>request</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.admin.ImportMixin.process_import" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>実際のインポートアクションを実行する（ユーザーがインポートを確認した後）</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="import_export.admin.ImportMixin.resource_class">
+<code class="descname">resource_class</code><em class="property"> = None</em><a class="headerlink" href="#import_export.admin.ImportMixin.resource_class" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>resourceクラス</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api_resources.html" class="btn btn-neutral float-right" title="Resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="changelog.html" class="btn btn-neutral" title="Changelog" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012–2016, Bojan Mihelac.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.5.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

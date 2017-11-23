@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>インポートデータのワークフロー &mdash; django-import-export 0.5.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="django-import-export 0.5.1 ドキュメント" href="index.html"/>
+        <link rel="next" title="Changelog" href="changelog.html"/>
+        <link rel="prev" title="入門" href="getting_started.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> django-import-export
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザーガイド</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">インストールと設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">入門</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">インポートデータのワークフロー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#transaction-support">トランザクションサポート</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">APIドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_widgets.html">Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_fields.html">Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_instance_loaders.html">Instance loaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_tmp_storages.html">Temporary storages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_results.html">Results</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">django-import-export</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>インポートデータのワークフロー</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="import-data-workflow">
+<h1>インポートデータのワークフロー<a class="headerlink" href="#import-data-workflow" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このドキュメントでは、インポートプロセスのカスタマイズを可能にするフックで、インポートデータのワークフローを詳しく説明します。インポートプロセスの中心的な側面は、下記の説明にあるリソースの <a class="reference internal" href="api_resources.html#import_export.resources.Resource.import_data" title="import_export.resources.Resource.import_data"><code class="xref py py-meth docutils literal"><span class="pre">import_data()</span></code></a> メソッドです。</p>
+<dl class="function">
+<dt id="import_data">
+<code class="descname">import_data</code><span class="sig-paren">(</span><em>dataset</em>, <em>dry_run=False</em>, <em>raise_errors=False</em><span class="sig-paren">)</span><a class="headerlink" href="#import_data" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p><a class="reference internal" href="api_resources.html#import_export.resources.Resource" title="import_export.resources.Resource"><code class="xref py py-class docutils literal"><span class="pre">Resource</span></code></a> の <a class="reference internal" href="api_resources.html#import_export.resources.Resource.import_data" title="import_export.resources.Resource.import_data"><code class="xref py py-meth docutils literal"><span class="pre">import_data()</span></code></a> メソッドは、指定されたデータセットからデータをインポートすることを担当します。</p>
+<p><code class="docutils literal"><span class="pre">dataset</span></code> は必須であり、ヘッダー行を持つ <code class="xref py py-class docutils literal"><span class="pre">tablib.Dataset</span></code> であることが必要です。</p>
+<p><code class="docutils literal"><span class="pre">dry_run</span></code> はデータベースを変更するか、インポートをシュミレートするかどうかを判断するブール値です。デフォルトは <code class="docutils literal"><span class="pre">False</span></code> です。</p>
+<p><code class="docutils literal"><span class="pre">raise_errors</span></code> はブール値です。 <code class="docutils literal"><span class="pre">True</span></code> の場合、エラーが発生します。デフォルトは <code class="docutils literal"><span class="pre">False</span></code> です。これは最終的なエラーとトレースバックが <code class="docutils literal"><span class="pre">Result</span></code> インスタンスに保存されることを意味します。</p>
+</dd></dl>
+
+<p>これはメソッドが呼び出されたときに起こることです:</p>
+<ol class="arabic">
+<li><p class="first">最初に、インポート中に収集されたエラーやその他の情報を保持する新しい <code class="xref py py-class docutils literal"><span class="pre">InstanceLoader</span></code> インスタンが初期化されます。</p>
+<p>次に、既存のインスタンスのロードを担当する <code class="xref py py-class docutils literal"><span class="pre">InstanceLoader</span></code> が初期化されます。<a class="reference internal" href="api_resources.html#import_export.resources.ResourceOptions" title="import_export.resources.ResourceOptions"><code class="xref py py-class docutils literal"><span class="pre">ResourceOptions</span></code></a> の <code class="docutils literal"><span class="pre">instance_loader_class</span></code> 属性を使用して別の :class:~import_export.instance_loaders.BaseInstanceLoader` を指定できます。<a class="reference internal" href="api_instance_loaders.html#import_export.instance_loaders.CachedInstanceLoader" title="import_export.instance_loaders.CachedInstanceLoader"><code class="xref py py-class docutils literal"><span class="pre">CachedInstanceLoader</span></code></a> を使用すると、データベースクエリの数を減らすことが出来ます。利用可能な実装については、 <a class="reference external" href="https://github.com/django-import-export/django-import-export/blob/master/import_export/instance_loaders.py">source</a>  を参照して下さい。</p>
+</li>
+<li><p class="first"><a class="reference internal" href="api_resources.html#import_export.resources.Resource.before_import" title="import_export.resources.Resource.before_import"><code class="xref py py-meth docutils literal"><span class="pre">before_import()</span></code></a> フックが呼び出されます。このメソッドをリソースに実装することで、インポートプロセスをカスタマイズ出来ます。</p>
+</li>
+<li><p class="first">インポート大勝のデータセットの各行は、次の手順に従って処理されます:</p>
+<ol class="arabic">
+<li><p class="first"><a class="reference internal" href="api_resources.html#import_export.resources.Resource.before_import_row" title="import_export.resources.Resource.before_import_row"><code class="xref py py-meth docutils literal"><span class="pre">before_import_row()</span></code></a> フックはインポートする前に変更される行データを許可するために呼び出されます</p>
+</li>
+<li><p class="first"><a class="reference internal" href="api_resources.html#import_export.resources.Resource.get_or_init_instance" title="import_export.resources.Resource.get_or_init_instance"><code class="xref py py-meth docutils literal"><span class="pre">get_or_init_instance()</span></code></a>  は、現在の <a class="reference internal" href="api_instance_loaders.html#import_export.instance_loaders.BaseInstanceLoader" title="import_export.instance_loaders.BaseInstanceLoader"><code class="xref py py-class docutils literal"><span class="pre">BaseInstanceLoader</span></code></a> とデータセットの現在の行で呼び出され、オブジェクトが返され、オブフェクトが新しく作成されたかどうかのブール値が宣言されます。</p>
+<p>現在の行でオブジェクトが見つからない場合は、オブジェクトを初期化するために <code class="xref py py-meth docutils literal"><span class="pre">init_instance()</span></code> が呼び出されます。</p>
+<p>いつものように、<code class="xref py py-meth docutils literal"><span class="pre">init_instance()</span></code> 実装を上書きして、新しいオブジェクトの作成方法をカスタマイズすることが出来ます(つまり、デフォルト値の設定)。</p>
+</li>
+<li><p class="first"><a class="reference internal" href="api_resources.html#import_export.resources.Resource.for_delete" title="import_export.resources.Resource.for_delete"><code class="xref py py-meth docutils literal"><span class="pre">for_delete()</span></code></a> は渡された <code class="docutils literal"><span class="pre">instance</span></code> を削除するかどうかを判断するために呼び出されます。この場合、現在の行のインポートプロセスはこの時点で停止します。</p>
+</li>
+<li><p class="first">前の手順でインスタンスが削除されなかった場合、<a class="reference internal" href="api_resources.html#import_export.resources.Resource.import_obj" title="import_export.resources.Resource.import_obj"><code class="xref py py-meth docutils literal"><span class="pre">import_obj()</span></code></a> は現在のオブジェクトとして <code class="docutils literal"><span class="pre">instance</span></code> を、現在の行として <code class="docutils literal"><span class="pre">row</span></code> を、そして <code class="docutils literal"><span class="pre">dry</span> <span class="pre">run</span></code> で呼ばれます。</p>
+<p><a class="reference internal" href="api_resources.html#import_export.resources.Resource.import_field" title="import_export.resources.Resource.import_field"><code class="xref py py-meth docutils literal"><span class="pre">import_field()</span></code></a> は、多対多のフィールドをスキップする <a class="reference internal" href="api_resources.html#import_export.resources.Resource" title="import_export.resources.Resource"><code class="xref py py-class docutils literal"><span class="pre">Resource</span></code></a> の各フィールドに対して呼び出されます。多対多のフィールドはインスタンスに主キーを持たせる必要があるためスキップされます。そしてオブジェクトがすでに保存されている時に代入が延期されます。</p>
+<p><code class="xref py py-meth docutils literal"><span class="pre">attribute`()</span></code> が設定され、<cite>Field.column_name`</cite> が指定された行に存在する場合、<a class="reference internal" href="api_fields.html#import_export.fields.Field.save" title="import_export.fields.Field.save"><code class="xref py py-meth docutils literal"><span class="pre">save()</span></code></a> を呼び出します。</p>
+</li>
+<li><p class="first">次いで、新たにインポートされたオブジェクトがすでに存在するオブジェクトと異なるか否か、したがって、与えられた行がスキップされるべきか否かが判定される。これは、元のオブジェクトとして <code class="docutils literal"><span class="pre">original</span></code> を使用し、データセットから現行オブジェクトとして <code class="docutils literal"><span class="pre">instance</span></code> を <a class="reference internal" href="api_resources.html#import_export.resources.Resource.skip_row" title="import_export.resources.Resource.skip_row"><code class="xref py py-meth docutils literal"><span class="pre">skip_row()</span></code></a> を呼び出すことによって処理されます。</p>
+<p>現在の行をスキップする場合、<code class="docutils literal"><span class="pre">row_result.import_type</span></code> は <code class="docutils literal"><span class="pre">IMPORT_TYPE_SKIP</span></code> に設定されます。</p>
+</li>
+<li><p class="first">現在の行をスキップしない場合は、 <a class="reference internal" href="api_resources.html#import_export.resources.Resource.save_instance" title="import_export.resources.Resource.save_instance"><code class="xref py py-meth docutils literal"><span class="pre">save_instance()</span></code></a> が呼び出され、 <cite>dry_run`</cite>  が設定されていない場合、実際にインスタンスが保存されます。</p>
+<p>インポートプロセスをカスタマイズするオプションを提供する2つのフックメソッド（デフォルトでは何もしません）があります:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="api_resources.html#import_export.resources.Resource.before_save_instance" title="import_export.resources.Resource.before_save_instance"><code class="xref py py-meth docutils literal"><span class="pre">before_save_instance()</span></code></a></li>
+<li><a class="reference internal" href="api_resources.html#import_export.resources.Resource.after_save_instance" title="import_export.resources.Resource.after_save_instance"><code class="xref py py-meth docutils literal"><span class="pre">after_save_instance()</span></code></a></li>
+</ul>
+</div></blockquote>
+<p>どちらのメソッドも、<code class="docutils literal"><span class="pre">instance</span></code> 引数と <code class="docutils literal"><span class="pre">dry_run</span></code> 引数を受け取ります。</p>
+</li>
+<li><p class="first"><a class="reference internal" href="api_resources.html#import_export.resources.Resource.save_m2m" title="import_export.resources.Resource.save_m2m"><code class="xref py py-meth docutils literal"><span class="pre">save_m2m()</span></code></a> は、多くのフィールドを保存するために呼び出されます。</p>
+</li>
+<li><p class="first"><code class="xref py py-class docutils literal"><span class="pre">RowResult</span></code> には、元のフィールドとインポートされたオブジェクトフィールドの間のdiff、および行が新規か更新済みかスキップされたか削除されたかを示す <code class="docutils literal"><span class="pre">import_type</span></code> 属性が割り当てられます。</p>
+<p>行の処理中に例外が発生し、<code class="docutils literal"><span class="pre">raise_errors=False</span></code> (デフォルト)の <a class="reference internal" href="api_resources.html#import_export.resources.Resource.import_data" title="import_export.resources.Resource.import_data"><code class="xref py py-meth docutils literal"><span class="pre">import_data()</span></code></a> が呼び出された場合、特定のトレースバックが <code class="xref py py-class docutils literal"><span class="pre">RowResult</span></code> にも追加されます。</p>
+<p>行がスキップされなかった場合、またはスキップされた行をレポートするように <a class="reference internal" href="api_resources.html#import_export.resources.Resource" title="import_export.resources.Resource"><code class="xref py py-class docutils literal"><span class="pre">Resource</span></code></a> が構成されている場合は、<code class="xref py py-class docutils literal"><span class="pre">RowResult</span></code> が <a class="reference internal" href="api_results.html#import_export.results.Result" title="import_export.results.Result"><code class="xref py py-class docutils literal"><span class="pre">Result</span></code></a> 追加されます</p>
+</li>
+<li><p class="first"><a class="reference internal" href="api_resources.html#import_export.resources.Resource.after_import_row" title="import_export.resources.Resource.after_import_row"><code class="xref py py-meth docutils literal"><span class="pre">after_import_row()</span></code></a> フックは呼び出されます</p>
+</li>
+</ol>
+</li>
+<li><p class="first"><a class="reference internal" href="api_results.html#import_export.results.Result" title="import_export.results.Result"><code class="xref py py-class docutils literal"><span class="pre">Result</span></code></a> が返されます。</p>
+</li>
+</ol>
+<div class="section" id="transaction-support">
+<h2>トランザクションサポート<a class="headerlink" href="#transaction-support" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>トランザクションサポートが有効な場合、インポートプロセス全体がトランザクション内でラップされ、ロールバックまたはコミットされます。 <code class="docutils literal"><span class="pre">import_data</span></code> (create / delete / update)の内部から呼び出されたすべてのメソッドは、<code class="docutils literal"><span class="pre">dry_run</span></code> 引数に対して <code class="docutils literal"><span class="pre">False</span></code> を受け取ります。</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getting_started.html" class="btn btn-neutral" title="入門" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012–2016, Bojan Mihelac.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.5.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

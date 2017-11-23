@@ -1,0 +1,566 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>入門 &mdash; django-import-export 0.5.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="django-import-export 0.5.1 ドキュメント" href="index.html"/>
+        <link rel="next" title="インポートデータのワークフロー" href="import_workflow.html"/>
+        <link rel="prev" title="インストールと設定" href="installation.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> django-import-export
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザーガイド</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">インストールと設定</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">入門</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-import-export-resource">インポート・エクスポートのリソースを作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exporting-data">データのエクスポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customize-resource-options">リソースオプションのカスタマイズ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#declaring-fields">フィールドの宣言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-data-manipulation">高度なデータ操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customize-widgets">ウィジェットのカスタマイズ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#importing-data">データのインポート</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-data">データの削除</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#signals">シグナル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#admin-integration">Adminとの統合</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exporting-via-list-filters">リストフィルタによるエクスポート</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exporting-via-admin-action">adminアクションによるエクスポート</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import_workflow.html">インポートデータのワークフロー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">APIドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_widgets.html">Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_fields.html">Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_instance_loaders.html">Instance loaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_tmp_storages.html">Temporary storages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_results.html">Results</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">django-import-export</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>入門</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>入門<a class="headerlink" href="#getting-started" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>例えば、シンプルな書籍アプリを使用します。ここに <code class="docutils literal"><span class="pre">model.py</span></code> があります:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># app/models.py</span>
+
+<span class="k">class</span> <span class="nc">Author</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+
+<span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+
+<span class="k">class</span> <span class="nc">Book</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s1">&#39;Book name&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Author</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">author_email</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">EmailField</span><span class="p">(</span><span class="s1">&#39;Author email&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">imported</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">published</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="s1">&#39;Published&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DecimalField</span><span class="p">(</span><span class="n">max_digits</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">decimal_places</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Category</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+<div class="section" id="creating-import-export-resource">
+<span id="base-modelresource"></span><h2>インポート・エクスポートのリソースを作成<a class="headerlink" href="#creating-import-export-resource" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">Book</span></code> モデルに <cite>django-import-export</cite> を統合するために、 <code class="docutils literal"><span class="pre">admin.py</span></code> に <a class="reference internal" href="api_resources.html#import_export.resources.ModelResource" title="import_export.resources.ModelResource"><code class="xref py py-class docutils literal"><span class="pre">ModelResource</span></code></a> を作成し、このリソースをどのようにインポートまたはエクスポート出来るようにするか記述します:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># app/admin.py</span>
+
+<span class="kn">from</span> <span class="nn">import_export</span> <span class="k">import</span> <span class="n">resources</span>
+<span class="kn">from</span> <span class="nn">core.models</span> <span class="k">import</span> <span class="n">Book</span>
+
+<span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exporting-data">
+<h2>データのエクスポート<a class="headerlink" href="#exporting-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference internal" href="api_resources.html#import_export.resources.ModelResource" title="import_export.resources.ModelResource"><code class="xref py py-class docutils literal"><span class="pre">ModelResource</span></code></a> クラスを定義したので書籍をエクスポートすることが出来ます:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">app.admin</span> <span class="k">import</span> <span class="n">BookResource</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span> <span class="o">=</span> <span class="n">BookResource</span><span class="p">()</span><span class="o">.</span><span class="n">export</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">dataset</span><span class="o">.</span><span class="n">csv</span>
+<span class="go">id,name,author,author_email,imported,published,price,categories</span>
+<span class="go">2,Some book,1,,0,2012-12-05,8.85,1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="customize-resource-options">
+<h2>リソースオプションのカスタマイズ<a class="headerlink" href="#customize-resource-options" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>デフォルトで <a class="reference internal" href="api_resources.html#import_export.resources.ModelResource" title="import_export.resources.ModelResource"><code class="xref py py-class docutils literal"><span class="pre">ModelResource</span></code></a> はモデルフィールドをイントロスペクトし、各フィールドに適切な <a class="reference internal" href="api_widgets.html#import_export.widgets.Widget" title="import_export.widgets.Widget"><code class="xref py py-class docutils literal"><span class="pre">Widget</span></code></a> を持つ:class:<cite>~import_export.fields.Field</cite> 属性を作成します。</p>
+<p>インポート・エクスポートリソースに含めるモデルフィールドを変更するには、 <code class="docutils literal"><span class="pre">field</span></code> オプションをホワイトリストに追加します:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,)</span>
+</pre></div>
+</div>
+<p>除外したい場合は、 <code class="docutils literal"><span class="pre">eclude</span></code> オプションにブラックリストを追加します:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;imported&#39;</span><span class="p">,</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>エクスポートするフィールドの順序を明示的にするには、 <code class="docutils literal"><span class="pre">export_order</span></code> オプションを使用して設定します:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;author&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,)</span>
+        <span class="n">export_order</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;author&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>オブジェクトを識別するデフォルトのフィールドは <code class="docutils literal"><span class="pre">id</span></code> です。インポート時に <code class="docutils literal"><span class="pre">id</span></code> として使用するフィールドをオプションで設定出来ます:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+        <span class="n">import_id_fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;isbn&#39;</span><span class="p">,)</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;isbn&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;author&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,)</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="api_resources.html#import_export.resources.ModelResource" title="import_export.resources.ModelResource"><code class="xref py py-class docutils literal"><span class="pre">ModelResource</span></code></a> フィールドを定義する時、モデルの関連に従うことが可能です:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;author__name&#39;</span><span class="p">,)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">次の関連フィールドは読み込み専用の <code class="docutils literal"><span class="pre">field</span></code> に設定します。つまり、データのインポート時にこのフィールドはスキップされます。</p>
+</div>
+<p>変更が検出されなくても、デフォルトではすべてのレコードがインポートされます。これは <code class="docutils literal"><span class="pre">skip_unchanged</span></code> オプションを設定することで変更出来ます。また、 <cite>report_skipped`</cite> オプションはスキップされたレコードがインポートの <code class="docutils literal"><span class="pre">Result</span></code> オブジェクトに表示されるかを制御し、もしadminを使っていたらスキップされたレコードがインポートプレビューページに表示するかどうかを制御します:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+        <span class="n">skip_unchanged</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">report_skipped</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,)</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<p class="last"><a class="reference internal" href="api_resources.html"><span class="doc">Resources</span></a></p>
+</div>
+</div>
+<div class="section" id="declaring-fields">
+<h2>フィールドの宣言<a class="headerlink" href="#declaring-fields" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>オプションを変更してリソースフィールドを上書きすることは可能です:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">import_export</span> <span class="k">import</span> <span class="n">fields</span>
+
+<span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+    <span class="n">published</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">column_name</span><span class="o">=</span><span class="s1">&#39;published_date&#39;</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+</pre></div>
+</div>
+<p>ターゲットモデルに存在しない他のフィールを追加することが出来ます:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">import_export</span> <span class="k">import</span> <span class="n">fields</span>
+
+<span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+    <span class="n">myfield</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">column_name</span><span class="o">=</span><span class="s1">&#39;myfield&#39;</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<dl class="last docutils">
+<dt><a class="reference internal" href="api_fields.html"><span class="doc">Fields</span></a></dt>
+<dd>利用可能なフィールドタイプとオプション。</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="advanced-data-manipulation">
+<h2>高度なデータ操作<a class="headerlink" href="#advanced-data-manipulation" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>すべてのデータをオブジェクト/モデル属性から簡単に抽出することは出来ません。複雑なデータモデルを処理されたデータ構造(一般的にはよりシンプル)に変換するには、 <code class="docutils literal"><span class="pre">dehydrate_&lt;fieldname&gt;</span></code> メソッドを定義する必要があります:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">import_export</span> <span class="k">import</span> <span class="n">fields</span>
+
+<span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+    <span class="n">full_title</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Field</span><span class="p">()</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+
+    <span class="k">def</span> <span class="nf">dehydrate_full_title</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> by </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">book</span><span class="o">.</span><span class="n">author</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="customize-widgets">
+<h2>ウィジェットのカスタマイズ<a class="headerlink" href="#customize-widgets" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference internal" href="api_resources.html#import_export.resources.ModelResource" title="import_export.resources.ModelResource"><code class="xref py py-class docutils literal"><span class="pre">ModelResource</span></code></a> は、与えられたフィールドタイプのデフォルトウィジェットでフィールドを作成します。もしウィジェットを異なる引数で初期化する必要がある場合、 <code class="docutils literal"><span class="pre">widgets</span></code> 辞書を設定します。</p>
+<p>このサンプルウィジェットでは、 <code class="docutils literal"><span class="pre">published</span></code> フィールドが異なる日付形式を使うよう上書きされています。この形式はインポートとエクスポートリソースの両方で使用されます。</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+        <span class="n">widgets</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;published&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">.%m.%Y&#39;</span><span class="p">},</span>
+                <span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<dl class="last docutils">
+<dt><a class="reference internal" href="api_widgets.html"><span class="doc">Widgets</span></a></dt>
+<dd>利用可能なウィジェットタイプとオプション。</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="importing-data">
+<h2>データのインポート<a class="headerlink" href="#importing-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>いくつかのデータをインポートしましょう!</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">tablib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">import_export</span> <span class="kn">import</span> <span class="n">resources</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">core.models</span> <span class="kn">import</span> <span class="n">Book</span>
+<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="n">book_resource</span> <span class="o">=</span> <span class="n">resources</span><span class="o">.</span><span class="n">modelresource_factory</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">Book</span><span class="p">)()</span>
+</span><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="n">dataset</span> <span class="o">=</span> <span class="n">tablib</span><span class="o">.</span><span class="n">Dataset</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;New book&#39;</span><span class="p">],</span> <span class="n">headers</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">])</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">book_resource</span><span class="o">.</span><span class="n">import_data</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">dry_run</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">result</span><span class="o">.</span><span class="n">has_errors</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">book_resource</span><span class="o">.</span><span class="n">import_data</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">dry_run</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>4行目では、 <a class="reference internal" href="api_resources.html#import_export.resources.modelresource_factory" title="import_export.resources.modelresource_factory"><code class="xref py py-func docutils literal"><span class="pre">modelresource_factory()</span></code></a> を使用してデフォルトの <a class="reference internal" href="api_resources.html#import_export.resources.ModelResource" title="import_export.resources.ModelResource"><code class="xref py py-class docutils literal"><span class="pre">ModelResource</span></code></a> を作成します。この方法で作成されたModelResourceクラスは、 <a class="reference internal" href="#base-modelresource"><span class="std std-ref">インポート・エクスポートのリソースを作成</span></a> セクションの例で示されているものと同じです。</p>
+<p>5行目では、 <code class="docutils literal"><span class="pre">id</span></code> と <code class="docutils literal"><span class="pre">name</span></code> および一つの書籍エントリを持つ <code class="xref py py-class docutils literal"><span class="pre">Dataset</span></code> が作成されます。主キーフィールド(この場合は、 <code class="docutils literal"><span class="pre">id</span></code> )のフィールドは、常に存在する必要があります。</p>
+<p>コードの残りの部分では、最初に <a class="reference internal" href="api_resources.html#import_export.resources.Resource.import_data" title="import_export.resources.Resource.import_data"><code class="xref py py-meth docutils literal"><span class="pre">import_data()</span></code></a> と <code class="docutils literal"><span class="pre">dry_run</span></code> を使ってインポートして、エラーチェックをしてから実際にデータをインポートします。</p>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<dl class="last docutils">
+<dt><a class="reference internal" href="import_workflow.html"><span class="doc">インポートデータのワークフロー</span></a></dt>
+<dd>インポートのワークフローとそのカスタマイズオプションの詳細について。</dd>
+</dl>
+</div>
+<div class="section" id="deleting-data">
+<h3>データの削除<a class="headerlink" href="#deleting-data" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>インポート中にオブジェクトを削除するには、 <a class="reference internal" href="api_resources.html#import_export.resources.Resource" title="import_export.resources.Resource"><code class="xref py py-class docutils literal"><span class="pre">Resource</span></code></a> クラスに <code class="xref py py-meth docutils literal"><span class="pre">for_delete()</span></code> を実装します。</p>
+<p>以下は、データセットに <code class="docutils literal"><span class="pre">delete</span></code> フィールドが存在するリソースの例です。このリソースを使用してインポートすると、 <code class="docutils literal"><span class="pre">delete</span></code> カラムが <code class="docutils literal"><span class="pre">1</span></code> にセットされている行のモデルインスタンスが削除されます:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BookResource</span><span class="p">(</span><span class="n">resources</span><span class="o">.</span><span class="n">ModelResource</span><span class="p">):</span>
+    <span class="n">delete</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Field</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">BooleanWidget</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">for_delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s1">&#39;delete&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Book</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="signals">
+<h2>シグナル<a class="headerlink" href="#signals" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>インポート・エクスポートのワークフローをフックするため、 <code class="docutils literal"><span class="pre">post_import</span></code> 、 <code class="docutils literal"><span class="pre">post_export</span></code> に接続出来ます:</p>
+<blockquote>
+<div><p>from django.dispatch import receiver
+from import_export.signals import post_import, post_export</p>
+<p>&#64;receiver(post_import, dispatch_uid=』balabala…』)
+def _post_import(model, <a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs):</p>
+<blockquote>
+<div># model is the actual model instance which after import
+pass</div></blockquote>
+<p>&#64;receiver(post_export, dispatch_uid=』balabala…』)
+def _post_export(model, <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs):</p>
+<blockquote>
+<div># model is the actual model instance which after export
+pass</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="admin-integration">
+<span id="id5"></span><h2>Adminとの統合<a class="headerlink" href="#admin-integration" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="exporting-via-list-filters">
+<h3>リストフィルタによるエクスポート<a class="headerlink" href="#exporting-via-list-filters" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>adminの統合は、 <a class="reference internal" href="api_admin.html#import_export.admin.ImportExportModelAdmin" title="import_export.admin.ImportExportModelAdmin"><code class="xref py py-class docutils literal"><span class="pre">ImportExportModelAdmin</span></code></a> または利用なミックスイン(<a class="reference internal" href="api_admin.html#import_export.admin.ImportMixin" title="import_export.admin.ImportMixin"><code class="xref py py-class docutils literal"><span class="pre">ImportMixin</span></code></a>, <a class="reference internal" href="api_admin.html#import_export.admin.ExportMixin" title="import_export.admin.ExportMixin"><code class="xref py py-class docutils literal"><span class="pre">ExportMixin</span></code></a>, <a class="reference internal" href="api_admin.html#import_export.admin.ImportExportMixin" title="import_export.admin.ImportExportMixin"><code class="xref py py-class docutils literal"><span class="pre">ImportExportMixin</span></code></a>) のサブクラス化で実現されます:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># app/admin.py</span>
+<span class="kn">from</span> <span class="nn">import_export.admin</span> <span class="k">import</span> <span class="n">ImportExportModelAdmin</span>
+
+<span class="k">class</span> <span class="nc">BookAdmin</span><span class="p">(</span><span class="n">ImportExportModelAdmin</span><span class="p">):</span>
+    <span class="n">resource_class</span> <span class="o">=</span> <span class="n">BookResource</span>
+</pre></div>
+</div>
+<div class="figure" id="id6">
+<img alt="_images/django-import-export-change.png" src="_images/django-import-export-change.png" />
+<p class="caption"><span class="caption-text">インポートとエクスポートボタンを持つ変更ビューのスクリーンショット。</span></p>
+</div>
+<div class="figure" id="id7">
+<img alt="_images/django-import-export-import.png" src="_images/django-import-export-import.png" />
+<p class="caption"><span class="caption-text">インポートビューのスクリーンショット。</span></p>
+</div>
+<div class="figure" id="id8">
+<img alt="_images/django-import-export-import-confirm.png" src="_images/django-import-export-import-confirm.png" />
+<p class="caption"><span class="caption-text">インポート確認ビューのスクリーンショット。</span></p>
+</div>
+</div>
+<div class="section" id="exporting-via-admin-action">
+<h3>adminアクションによるエクスポート<a class="headerlink" href="#exporting-via-admin-action" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>データをエクスポートするもう一つのアプローチは、adminアクションとしてエクスポートを実装する <a class="reference internal" href="api_admin.html#import_export.admin.ImportExportActionModelAdmin" title="import_export.admin.ImportExportActionModelAdmin"><code class="xref py py-class docutils literal"><span class="pre">ImportExportActionModelAdmin</span></code></a> をサブクラス化することです。結果として、変更リストページで選択されたオブジェクトのリストをエクスポートすることが出来ます:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># app/admin.py</span>
+<span class="kn">from</span> <span class="nn">import_export.admin</span> <span class="k">import</span> <span class="n">ImportExportActionModelAdmin</span>
+
+<span class="k">class</span> <span class="nc">BookAdmin</span><span class="p">(</span><span class="n">ImportExportActionModelAdmin</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<div class="figure" id="id9">
+<img alt="_images/django-import-export-action.png" src="_images/django-import-export-action.png" />
+<p class="caption"><span class="caption-text">adminアクションのインポートとエクスポートを持つ変更ビューのスクリーンショット。</span></p>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">参考</p>
+<dl class="last docutils">
+<dt><a class="reference internal" href="api_admin.html"><span class="doc">Admin</span></a></dt>
+<dd>利用可能なミックスインとオプション。</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="import_workflow.html" class="btn btn-neutral float-right" title="インポートデータのワークフロー" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral" title="インストールと設定" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012–2016, Bojan Mihelac.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.5.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

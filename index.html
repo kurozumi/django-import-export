@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Django インポート/エクスポート &mdash; django-import-export 0.5.1 ドキュメント</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="genindex.html"/>
+        <link rel="search" title="検索" href="search.html"/>
+    <link rel="top" title="django-import-export 0.5.1 ドキュメント" href="#"/>
+        <link rel="next" title="インストールと設定" href="installation.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> django-import-export
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">ユーザーガイド</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">インストールと設定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">入門</a></li>
+<li class="toctree-l1"><a class="reference internal" href="import_workflow.html">インポートデータのワークフロー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">APIドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_widgets.html">Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_fields.html">Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_instance_loaders.html">Instance loaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_tmp_storages.html">Temporary storages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_results.html">Results</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">django-import-export</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Django インポート/エクスポート</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="django-import-export">
+<h1>Django インポート/エクスポート<a class="headerlink" href="#django-import-export" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>django-import-exportは、Djangoのアプリケーションとライブラリであり、adminと統合してデータのインポートとエクスポートが可能になります。</p>
+<p><strong>特徴:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>複数のフォーマット(Excel、CSV、JSONなど、 <cite>tablib</cite> がサポートするすべてのフォーマット)をサポート</li>
+<li>インポート用のadmin統合</li>
+<li>インポートの変更プレビュー</li>
+<li>エクスポート用のadmin統合</li>
+<li>adminフィルタを尊重するエクスポートデータ</li>
+</ul>
+<div class="figure" id="id1">
+<img alt="_images/django-import-export-change.png" src="_images/django-import-export-change.png" />
+<p class="caption"><span class="caption-text">インポートとエクスポートを含む変更されたビューのスクリーンショット。</span></p>
+</div>
+</div></blockquote>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">ユーザーガイド</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">インストールと設定</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#settings">設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#example-app">サンプルアプリケーション</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">入門</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#creating-import-export-resource">インポート・エクスポートのリソースを作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#exporting-data">データのエクスポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#customize-resource-options">リソースオプションのカスタマイズ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#declaring-fields">フィールドの宣言</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#advanced-data-manipulation">高度なデータ操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#customize-widgets">ウィジェットのカスタマイズ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#importing-data">データのインポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#signals">シグナル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#admin-integration">Adminとの統合</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import_workflow.html">インポートデータのワークフロー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="import_workflow.html#transaction-support">トランザクションサポート</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#unreleased">0.5.2 (unreleased)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.5.1 (2016-09-29)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.5.0 (2016-09-01)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.4.5 (2016-04-06)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.4.4 (2016-03-22)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.4.3 (2016-03-08)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.4.2 (2015-12-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.4.1 (2015-12-11)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.4.0 (2015-12-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.3.1 (2015-11-20)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.3 (2015-11-20)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.2.9 (2015-11-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.2.8 (2015-07-29)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.2.7 (2015-05-04)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.2.6 (2014-10-09)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id17">0.2.5 (2014-10-04)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id18">0.2.4 (2014-09-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id19">0.2.3 (2014-07-01)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id20">0.2.2 (2014-04-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id21">0.2.1 (2014-02-20)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id22">0.2.0 (2014-01-30)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id23">0.1.6 (2014-01-21)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id24">0.1.5 (2013-11-29)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id25">0.1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id26">0.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id27">0.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id28">0.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id29">0.1.0</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">APIドキュメント</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api_admin.html">Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_resources.html">Resources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_resources.html#resource">Resource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_resources.html#modelresource">ModelResource</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_resources.html#resourceoptions-meta">ResourceOptions (Meta)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_resources.html#modelresource-factory">modelresource_factory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_widgets.html">Widgets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_fields.html">Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_instance_loaders.html">Instance loaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_tmp_storages.html">Temporary storages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_tmp_storages.html#tempfolderstorage">TempFolderStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tmp_storages.html#cachestorage">CacheStorage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_tmp_storages.html#mediastorage">MediaStorage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_results.html">Results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_results.html#result">Result</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="installation.html" class="btn btn-neutral float-right" title="インストールと設定" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012–2016, Bojan Mihelac.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.5.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
