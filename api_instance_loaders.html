@@ -102,7 +102,7 @@
 <p class="caption"><span class="caption-text">APIドキュメント</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="api_admin.html">Admin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_resources.html">リソース</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_widgets.html">Widgets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api_fields.html">Fields</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Instance loaders</a></li>
@@ -186,23 +186,21 @@
 <dl class="class">
 <dt id="import_export.instance_loaders.BaseInstanceLoader">
 <em class="property">class </em><code class="descclassname">import_export.instance_loaders.</code><code class="descname">BaseInstanceLoader</code><span class="sig-paren">(</span><em>resource</em>, <em>dataset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.instance_loaders.BaseInstanceLoader" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Base abstract implementation of instance loader.</p>
+<dd><p>インスタンスローダーの基本抽象実装。</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="import_export.instance_loaders.ModelInstanceLoader">
 <em class="property">class </em><code class="descclassname">import_export.instance_loaders.</code><code class="descname">ModelInstanceLoader</code><span class="sig-paren">(</span><em>resource</em>, <em>dataset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.instance_loaders.ModelInstanceLoader" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Instance loader for Django model.</p>
-<p>Lookup for model instance by <code class="docutils literal"><span class="pre">import_id_fields</span></code>.</p>
+<dd><p>Djangoモデルのインスタンスローダー。</p>
+<p><code class="docutils literal"><span class="pre">import_id_fields</span></code> でモデルインスタンスを検索します。</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="import_export.instance_loaders.CachedInstanceLoader">
 <em class="property">class </em><code class="descclassname">import_export.instance_loaders.</code><code class="descname">CachedInstanceLoader</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#import_export.instance_loaders.CachedInstanceLoader" title="この定義へのパーマリンク">¶</a></dt>
-<dd><p>Loads all possible model instances in dataset avoid hitting database for
-every <code class="docutils literal"><span class="pre">get_instance</span></code> call.</p>
-<p>This instance loader work only when there is one <code class="docutils literal"><span class="pre">import_id_fields</span></code>
-field.</p>
+<dd><p>すべての可能なモデルインスタンスをデータセットにロードして、<code class="docutils literal"><span class="pre">get_instance</span></code>  呼び出しごとにデータベースを起動しないようにします。</p>
+<p>このインスタンスローダーは、<code class="docutils literal"><span class="pre">import_id_fields</span></code> フィールドが1つだけある場合にのみ機能します。</p>
 </dd></dl>
 
 </div>
